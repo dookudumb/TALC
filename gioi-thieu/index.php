@@ -599,7 +599,7 @@
                 <div class="text-center">
                     <button
                         class="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold !rounded-button transition-colors whitespace-nowrap">
-                        Liên hệ tư vấn
+                         <a href="../lien-he/index.php">Liên hệ tư vấn</a>
                     </button>
                 </div>
             </div>
