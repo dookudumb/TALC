@@ -1,3 +1,11 @@
+
+<?php 
+include './config/db_connection.php';
+
+$sql= "SELECT `news_id`,`news_name`,`new_summary`,`news_img`,`create_time` FROM `news` limit 3";
+
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -15,7 +23,7 @@
             content: "\f3c2";
         }
     </style>
-    <script>C
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -69,6 +77,7 @@
                     </div>
                     <div>
                         <h2 class="text-4xl font-bold text-gray-900 mb-6">Về Chúng Tôi</h2>
+                        
                         <p class="text-gray-600 text-lg mb-6 leading-relaxed">
                             Với hơn 15 năm kinh nghiệm trong lĩnh vực khai thác và chế biến khoáng sản, chúng tôi tự hào
                             là nhà cung cấp hàng đầu các sản phẩm bột đá chất lượng cao tại Việt Nam.
@@ -210,42 +219,22 @@
                         ngành công nghiệp</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <?php
+                    while ($row = $result->fetch_assoc()):
+                    ?>
                     <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=Modern%20industrial%20mineral%20processing%20technology%20with%20advanced%20machinery%2C%20clean%20factory%20environment%2C%20quality%20control%20equipment%2C%20professional%20industrial%20photography%2C%20bright%20lighting&width=400&height=250&seq=news001&orientation=landscape"
-                            alt="Tin tức 1" class="w-full h-48 object-cover object-top">
+                        <img src="<?php echo $row['news_img']; ?>"
+                            alt="<?php echo $row['news_name'];?>" class="w-full h-48 object-cover object-top">
                         <div class="p-6">
-                            <div class="text-sm text-gray-500 mb-2">15 Tháng 12, 2024</div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Công nghệ mới trong sản xuất bột đá
-                                CaCO3</h3>
-                            <p class="text-gray-600 mb-4">Ứng dụng công nghệ hiện đại giúp nâng cao chất lượng và độ
-                                tinh khiết của sản phẩm bột đá CaCO3...</p>
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
+                            <div class="text-sm text-gray-500 mb-2"><?php echo $row['create_time'];?></div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3"><?php echo $row['news_name'];?></h3>
+                            <p class="text-gray-600 mb-4"><?php echo $row['new_summary'];?></p>
+                            <a href="./tin-tuc/chi-tiet-tin-tuc.php?id=<?php echo $row['news_id'];?>" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
                         </div>
                     </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=Environmental%20sustainability%20in%20mineral%20processing%20industry%2C%20green%20technology%2C%20eco-friendly%20manufacturing%20process%2C%20clean%20energy%20usage%20in%20stone%20powder%20production&width=400&height=250&seq=news002&orientation=landscape"
-                            alt="Tin tức 2" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="text-sm text-gray-500 mb-2">10 Tháng 12, 2024</div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Xu hướng phát triển bền vững trong
-                                ngành khoáng sản</h3>
-                            <p class="text-gray-600 mb-4">Cam kết bảo vệ môi trường và phát triển bền vững trong quá
-                                trình sản xuất và chế biến khoáng sản...</p>
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=Quality%20control%20laboratory%20for%20mineral%20powder%20testing%2C%20scientific%20equipment%2C%20professional%20testing%20environment%2C%20white%20lab%20coats%2C%20precision%20instruments%20for%20powder%20analysis&width=400&height=250&seq=news003&orientation=landscape"
-                            alt="Tin tức 3" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="text-sm text-gray-500 mb-2">05 Tháng 12, 2024</div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Tiêu chuẩn chất lượng mới cho bột TALC
-                            </h3>
-                            <p class="text-gray-600 mb-4">Áp dụng các tiêu chuẩn chất lượng quốc tế mới nhằm đảm bảo sản
-                                phẩm đạt chất lượng cao nhất...</p>
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
+                    <?php 
+                    endwhile;
+                    ?>
                 </div>
             </div>
         </section>

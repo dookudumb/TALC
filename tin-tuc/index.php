@@ -1,6 +1,14 @@
+<?php
+include '../config/db_connection.php';
+
+$sql= "SELECT `news_id`,`news_name`,`new_summary`,`news_img`,`news_author`,`create_time` FROM `news`";
+
+$result = $conn->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="vi">
-
+<!-- comment -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,27 +120,29 @@
         <section class="py-12">
             <div class="container mx-auto px-4">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="newsGrid">
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidd en hover:shadow-xl transition-shadow"
-                        data-category="technology" data-date="2024-12-20">
-                        <img src="https://readdy.ai/api/search-image?query=Advanced%20mineral%20processing%20technology%20with%20modern%20machinery%20and%20automation%20systems%2C%20clean%20industrial%20environment%2C%20high-tech%20equipment%20for%20stone%20powder%20production%2C%20professional%20factory%20setting%20with%20quality%20control%20systems&width=400&height=250&seq=news001&orientation=landscape"
-                            alt="Công nghệ mới trong sản xuất bột đá" class="w-full h-48 object-cover object-top">
+                    <?php
+                    while ($row = $result->fetch_assoc()):
+                    ?>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                         data-date="2024-12-20">
+                        <img src="<?php echo $row['news_img'];?>"
+                            alt="<?php echo $row['news_name'];?>" class="w-full h-48 object-cover object-top">
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Công
-                                    nghệ</span>
-                                <span class="text-sm text-gray-500">20 Tháng 12, 2024</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"><?php echo $row['news_author'];?></span>
+                                <span class="text-sm text-gray-500"><?php echo $row['create_time'];?></span>
                             </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Công nghệ mới trong sản xuất bột đá
-                                CaCO3 siêu mịn</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Ứng dụng công nghệ xử lý tiên tiến giúp nâng cao
-                                chất lượng và độ tinh khiết của sản phẩm bột đá CaCO3, đạt độ mịn dưới 5 micron với hiệu
-                                suất cao...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3"><?php echo $row['news_name'];?></h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3"><?php echo $row['new_summary'];?></p>
+                            <a href="./chi-tiet-tin-tuc.php?id=<?php echo $row['news_id'];?>"
                                 data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
                         </div>
                     </article>
+                    
+                    <?php
+                    endwhile;
+                    ?>
                 </div>
-
                 <div class="flex justify-center items-center mt-12 space-x-2">
                     <button
                         class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-primary hover:text-primary transition-colors"

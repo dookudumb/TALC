@@ -4,809 +4,580 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu - Công ty TNHH Khoáng Sản Việt</title>
+    <title>CryptoVN - Khám phá thế giới Crypto</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#3B82F6', secondary: '#10B981', dark: '#111827', darker: '#0F172A' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style>
         :where([class^="ri-"])::before {
             content: "\f3c2";
         }
     </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#64748b'
-                    },
-                    borderRadius: {
-                        'none': '0px',
-                        'sm': '4px',
-                        DEFAULT: '8px',
-                        'md': '12px',
-                        'lg': '16px',
-                        'xl': '20px',
-                        '2xl': '24px',
-                        '3xl': '32px',
-                        'full': '9999px',
-                        'button': '8px'
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
-<body class="bg-white">
-    <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
+<body class="bg-dark text-gray-100">
+    <header class="w-full bg-darker shadow-sm border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <div class="text-2xl font-['Pacifico'] text-primary">logo</div>
+                    <div class="font-['Pacifico'] text-2xl text-primary">logo</div>
                 </div>
-                <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="https://readdy.ai/home/ce4238be-d93e-4e30-8176-429edf64a1ef/03f8221c-473c-484b-98ae-7658723b53e5"
-                        data-readdy="true" class="text-gray-700 hover:text-primary transition-colors">Trang chủ</a>
-                    <a href="#" class="text-primary font-medium">Giới thiệu</a>
-                    <div class="relative group">
-                        <button class="flex items-center text-gray-700 hover:text-primary transition-colors">
-                            Sản phẩm
-                            <div class="w-4 h-4 flex items-center justify-center ml-1">
-                                <i class="ri-arrow-down-s-line"></i>
-                            </div>
-                        </button>
-                        <div
-                            class="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="py-2">
-                                <div class="px-4 py-2 text-sm font-semibold text-gray-900 border-b">Bột TALC</div>
-                                <a href="#" class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-50">Bột TALC
-                                    A</a>
-                                <a href="#" class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-50">Bột TALC
-                                    C</a>
-                                <a href="#" class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-50">Bột TALC
-                                    A</a>
-                                <div class="px-4 py-2 text-sm font-semibold text-gray-900 border-b border-t mt-2">Bột đá
-                                    CaCO3</div>
-                                <a href="#" class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-50">Bột đá 8
-                                    Micron</a>
-                                <a href="#" class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-50">Bột đá 10
-                                    Micron</a>
-                                <a href="#" class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-50">Bột đá 15
-                                    Micron</a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Tin tức</a>
-                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Liên hệ</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition-colors">About</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition-colors">Products</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition-colors">News</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
                 </nav>
                 <div class="flex items-center space-x-4">
                     <button
-                        class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors"
-                        id="searchToggle">
-                        <i class="ri-search-line"></i>
-                    </button>
-                    <button class="lg:hidden w-8 h-8 flex items-center justify-center text-gray-600"
-                        id="mobileMenuToggle">
-                        <i class="ri-menu-line"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="hidden overflow-hidden transition-all duration-300" id="searchBar">
-                <div class="py-4 border-t">
-                    <div class="relative">
-                        <input type="text" placeholder="Tìm kiếm sản phẩm..."
-                            class="w-full px-4 py-2 pr-10 border rounded-lg focus:outline-none focus:border-primary">
-                        <div
-                            class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
-                            <i class="ri-search-line text-gray-400"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:hidden hidden" id="mobileMenu">
-                <div class="py-4 space-y-2 border-t">
-                    <a href="https://readdy.ai/home/ce4238be-d93e-4e30-8176-429edf64a1ef/03f8221c-473c-484b-98ae-7658723b53e5"
-                        data-readdy="true" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Trang chủ</a>
-                    <a href="#" class="block px-4 py-2 text-primary font-medium">Giới thiệu</a>
-                    <div class="px-4 py-2">
-                        <button class="flex items-center w-full text-left text-gray-700" id="mobileProductToggle">
-                            Sản phẩm
-                            <div class="w-4 h-4 flex items-center justify-center ml-1">
-                                <i class="ri-arrow-down-s-line"></i>
-                            </div>
-                        </button>
-                        <div class="hidden mt-2 ml-4 space-y-1" id="mobileProductMenu">
-                            <div class="text-sm font-semibold text-gray-900 py-1">Bột TALC</div>
-                            <a href="#" class="block py-1 text-sm text-gray-600 ml-4">Bột TALC A</a>
-                            <a href="#" class="block py-1 text-sm text-gray-600 ml-4">Bột TALC C</a>
-                            <a href="#" class="block py-1 text-sm text-gray-600 ml-4">Bột TALC A</a>
-                            <div class="text-sm font-semibold text-gray-900 py-1 mt-2">Bột đá CaCO3</div>
-                            <a href="#" class="block py-1 text-sm text-gray-600 ml-4">Bột đá 8 Micron</a>
-                            <a href="#" class="block py-1 text-sm text-gray-600 ml-4">Bột đá 10 Micron</a>
-                            <a href="#" class="block py-1 text-sm text-gray-600 ml-4">Bột đá 15 Micron</a>
-                        </div>
-                    </div>
-                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Tin tức</a>
-                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Liên hệ</a>
+                        class="text-gray-300 hover:text-primary transition-colors !rounded-button whitespace-nowrap">Sign
+                        In</button>
+                    <button
+                        class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">Sign
+                        Up</button>
                 </div>
             </div>
         </div>
     </header>
-    <main class="pt-16">
-        <section class="relative h-96 flex items-center justify-center overflow-hidden"
-            style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20industrial%20mineral%20processing%20company%20headquarters%20building%20with%20modern%20architecture%2C%20clean%20corporate%20environment%2C%20blue%20sky%20background%2C%20wide%20angle%20view%2C%20professional%20corporate%20photography%20showing%20scale%20and%20success&width=1920&height=600&seq=about-hero&orientation=landscape'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-            <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-                <h1 class="text-5xl font-bold mb-4">Về Chúng Tôi</h1>
-                <p class="text-xl opacity-90">Hành trình 15 năm xây dựng và phát triển trong ngành khoáng sản</p>
-            </div>
-        </section>
-        <section class="py-4 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="flex items-center text-sm text-gray-600">
-                    <a href="https://readdy.ai/home/ce4238be-d93e-4e30-8176-429edf64a1ef/03f8221c-473c-484b-98ae-7658723b53e5"
-                        data-readdy="true" class="hover:text-primary">Trang chủ</a>
-                    <div class="w-4 h-4 flex items-center justify-center mx-2">
-                        <i class="ri-arrow-right-s-line"></i>
-                    </div>
-                    <span class="text-primary">Giới thiệu</span>
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-darker">
+        <div class="absolute inset-0"
+            style="background-image: url('https://readdy.ai/api/search-image?query=futuristic%20cryptocurrency%20trading%20platform%20interface%20with%20holographic%20elements%2C%203D%20floating%20crypto%20coins%2C%20glowing%20circuit%20patterns%2C%20dark%20modern%20tech%20background%20with%20neon%20blue%20accents%2C%20detailed%20blockchain%20visualization%20with%20network%20nodes%2C%20professional%20fintech%20aesthetic%20with%20depth%20and%20dimension&width=1920&height=1080&seq=hero-crypto-enhanced&orientation=landscape'); background-size: cover; background-position: center;">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-darker via-darker/95 to-darker/30"></div>
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-full h-full bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div
+                    class="absolute -top-[40%] -left-[20%] w-[600px] h-[600px] bg-primary/30 rounded-full blur-[128px]">
+                </div>
+                <div
+                    class="absolute -bottom-[40%] -right-[20%] w-[600px] h-[600px] bg-blue-500/30 rounded-full blur-[128px]">
                 </div>
             </div>
-        </section>
-        <section class="py-20">
-            <div class="container mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Công ty Cổ phần Khoáng sản Công nghiệp Miền
-                            Bắc</h2>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                            Công ty Cổ phần Khoáng sản Công nghiệp Miền Bắc là doanh nghiệp hàng đầu trong lĩnh vực khai
-                            thác, chế biến và kinh doanh khoáng sản công nghiệp tại khu vực phía Bắc Việt Nam. Với hơn
-                            15 năm kinh nghiệm, chúng tôi tự hào là đối tác tin cậy cung cấp các sản phẩm bột đá, bột
-                            TALC chất lượng cao cho các ngành công nghiệp sơn, nhựa, giấy và vật liệu xây dựng.
-                        </p>
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-start">
-                                <div
-                                    class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4">
-                                    <i class="ri-check-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Công nghệ hiện đại</h3>
-                                    <p class="text-gray-600">Sở hữu dây chuyền sản xuất tự động từ các thương hiệu hàng
-                                        đầu thế giới</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div
-                                    class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4">
-                                    <i class="ri-check-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Đội ngũ chuyên nghiệp</h3>
-                                    <p class="text-gray-600">Hơn 200 kỹ sư và chuyên gia có kinh nghiệm trong ngành</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div
-                                    class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4">
-                                    <i class="ri-check-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Chất lượng đảm bảo</h3>
-                                    <p class="text-gray-600">Sản phẩm đạt tiêu chuẩn ISO 9001:2015 và các chứng nhận
-                                        quốc tế</p>
-                                </div>
-                            </div>
+        </div>
+        <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left relative">
+                    <div class="absolute -top-20 -left-20 w-[140px] h-[140px]">
+                        <div
+                            class="w-full h-full bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-full animate-pulse">
                         </div>
-                        <div class="flex space-x-4">
+                    </div>
+                    <div class="relative">
+                        <span
+                            class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
+                            Welcome to the Future of Finance
+                        </span>
+                        <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                            Explore the World of <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Crypto</span>
+                            with Us
+                        </h1>
+                        <p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
+                            Leading cryptocurrency trading platform with advanced blockchain technology,
+                            absolute security, and the most competitive trading fees in the market.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
                             <button
-                                class="bg-primary text-white hover:bg-blue-700 px-6 py-3 font-semibold !rounded-button transition-colors whitespace-nowrap">
-                                Liên hệ ngay
+                                class="group bg-gradient-to-r from-primary to-blue-500 text-white px-8 py-4 text-lg font-semibold !rounded-button hover:opacity-90 transition-all duration-300 whitespace-nowrap relative overflow-hidden">
+                                <span class="relative z-10">Get Started Now</span>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-blue-500 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
                             </button>
                             <button
-                                class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 font-semibold !rounded-button transition-colors whitespace-nowrap">
-                                Tải catalogue
+                                class="relative group border-2 border-primary/50 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-all duration-300 whitespace-nowrap overflow-hidden hover:border-primary">
+                                <span class="relative z-10 group-hover:text-white transition-colors duration-300">Learn
+                                    More</span>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-primary to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0">
+                                </div>
                             </button>
                         </div>
-                    </div>
-                    <div class="space-y-4">
-                        <img src="https://readdy.ai/api/search-image?query=Modern%20industrial%20mineral%20processing%20facility%20exterior%20with%20clean%20architecture%2C%20professional%20corporate%20building%20with%20glass%20facade%2C%20daytime%20with%20beautiful%20landscaping%2C%20high-end%20business%20environment&width=600&height=400&seq=company001&orientation=landscape"
-                            alt="Trụ sở công ty" class="w-full rounded-lg shadow-lg">
-                        <div class="grid grid-cols-2 gap-4">
-                            <img src="https://readdy.ai/api/search-image?query=Advanced%20mineral%20processing%20laboratory%20with%20modern%20testing%20equipment%2C%20scientists%20working%2C%20clean%20professional%20environment%2C%20quality%20control%20processes&width=300&height=200&seq=company002&orientation=landscape"
-                                alt="Phòng thí nghiệm" class="w-full rounded-lg shadow-lg">
-                            <img src="https://readdy.ai/api/search-image?query=Modern%20automated%20production%20line%20for%20mineral%20processing%2C%20industrial%20machinery%20in%20operation%2C%20workers%20in%20safety%20equipment%2C%20clean%20factory%20environment&width=300&height=200&seq=company003&orientation=landscape"
-                                alt="Dây chuyền sản xuất" class="w-full rounded-lg shadow-lg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-20">
-            <div class="container mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-16 items-start">
-                    <div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Lịch Sử Hình Thành</h2>
-                        <div class="space-y-8">
-                            <div class="flex items-start">
-                                <div
-                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
-                                    2009
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Thành lập công ty</h3>
-                                    <p class="text-gray-600">Khởi đầu với quy mô nhỏ, chuyên khai thác và chế biến đá
-                                        vôi tại mỏ Hòa Bình</p>
-                                </div>
+                        <div class="mt-12 flex items-center gap-8">
+                            <div class="flex items-center gap-2">
+                                <i class="ri-shield-check-line text-2xl text-primary"></i>
+                                <span class="text-gray-300">Bank-grade Security</span>
                             </div>
-                            <div class="flex items-start">
-                                <div
-                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
-                                    2012
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mở rộng sản xuất</h3>
-                                    <p class="text-gray-600">Đầu tư dây chuyền sản xuất bột TALC hiện đại, nâng công
-                                        suất lên 5.000 tấn/năm</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div
-                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
-                                    2016
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Chứng nhận ISO</h3>
-                                    <p class="text-gray-600">Đạt chứng nhận ISO 9001:2015, khẳng định chất lượng sản
-                                        phẩm đạt tiêu chuẩn quốc tế</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div
-                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
-                                    2020
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Xuất khẩu quốc tế</h3>
-                                    <p class="text-gray-600">Mở rộng thị trường xuất khẩu sang Thái Lan, Malaysia và các
-                                        nước ASEAN</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div
-                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
-                                    2024
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Hiện tại</h3>
-                                    <p class="text-gray-600">Trở thành nhà cung cấp hàng đầu với công suất 20.000
-                                        tấn/năm, phục vụ hơn 200 khách hàng</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Tầm Nhìn & Sứ Mệnh</h2>
-                        <div class="bg-gray-50 rounded-lg p-8 mb-8">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 flex items-center justify-center bg-primary rounded mr-3">
-                                    <i class="ri-eye-line text-white"></i>
-                                </div>
-                                <h3 class="text-xl font-semibold text-gray-900">Tầm Nhìn</h3>
-                            </div>
-                            <p class="text-gray-600 leading-relaxed">Trở thành công ty hàng đầu Việt Nam trong lĩnh vực
-                                sản xuất và cung cấp bột khoáng chất lượng cao, đáp ứng nhu cầu của các ngành công
-                                nghiệp hiện đại và góp phần phát triển kinh tế bền vững.</p>
-                        </div>
-                        <div class="bg-gray-50 rounded-lg p-8 mb-8">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 flex items-center justify-center bg-primary rounded mr-3">
-                                    <i class="ri-flag-line text-white"></i>
-                                </div>
-                                <h3 class="text-xl font-semibold text-gray-900">Sứ Mệnh</h3>
-                            </div>
-                            <p class="text-gray-600 leading-relaxed">Cung cấp các sản phẩm bột khoáng chất lượng cao với
-                                giá cả cạnh tranh, dịch vụ chuyên nghiệp, góp phần nâng cao chất lượng sản phẩm của
-                                khách hàng và phát triển ngành công nghiệp Việt Nam.</p>
-                        </div>
-                        <div class="bg-gray-50 rounded-lg p-8">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 flex items-center justify-center bg-primary rounded mr-3">
-                                    <i class="ri-heart-line text-white"></i>
-                                </div>
-                                <h3 class="text-xl font-semibold text-gray-900">Giá Trị Cốt Lõi</h3>
-                            </div>
-                            <ul class="text-gray-600 space-y-2">
-                                <li class="flex items-center">
-                                    <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                                    Chất lượng là ưu tiên hàng đầu
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                                    Đổi mới và cải tiến liên tục
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                                    Phát triển bền vững và thân thiện môi trường
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                                    Tận tâm phục vụ khách hàng
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Sơ Đồ Tổ Chức</h2>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Cơ cấu tổ chức của công ty được xây dựng theo mô
-                        hình quản lý hiện đại, chuyên nghiệp</p>
-                </div>
-                <div class="max-w-5xl mx-auto">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="flex flex-col items-center mb-12">
-                            <div class="w-64 bg-primary text-white p-4 rounded-lg text-center mb-4">
-                                <h3 class="text-lg font-semibold">Hội Đồng Quản Trị</h3>
-                                <p class="text-sm opacity-90">Chủ tịch: Ông Trần Đức Nam</p>
-                            </div>
-                            <div class="w-0.5 h-8 bg-gray-300"></div>
-                        </div>
-                        <div class="flex flex-col items-center mb-12">
-                            <div class="w-64 bg-primary text-white p-4 rounded-lg text-center mb-4">
-                                <h3 class="text-lg font-semibold">Ban Tổng Giám Đốc</h3>
-                                <p class="text-sm opacity-90">TGĐ: Ông Nguyễn Văn Minh</p>
-                            </div>
-                            <div class="w-0.5 h-8 bg-gray-300"></div>
-                        </div>
-                        <div class="grid grid-cols-3 gap-8 mb-12">
-                            <div class="flex flex-col items-center">
-                                <div class="w-full bg-blue-600 text-white p-4 rounded-lg text-center mb-4">
-                                    <h3 class="text-lg font-semibold">Khối Sản Xuất</h3>
-                                    <p class="text-sm opacity-90">Giám đốc: Ông Lê Đức Thắng</p>
-                                </div>
-                                <div class="w-0.5 h-8 bg-gray-300"></div>
-                                <div class="grid grid-cols-1 gap-4 w-full">
-                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
-                                        <p class="font-medium text-blue-900">Nhà máy Hòa Bình</p>
-                                    </div>
-                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
-                                        <p class="font-medium text-blue-900">Nhà máy Thái Nguyên</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-full bg-blue-600 text-white p-4 rounded-lg text-center mb-4">
-                                    <h3 class="text-lg font-semibold">Khối Kinh Doanh</h3>
-                                    <p class="text-sm opacity-90">Giám đốc: Bà Trần Thị Lan</p>
-                                </div>
-                                <div class="w-0.5 h-8 bg-gray-300"></div>
-                                <div class="grid grid-cols-1 gap-4 w-full">
-                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
-                                        <p class="font-medium text-blue-900">Chi nhánh Hà Nội</p>
-                                    </div>
-                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
-                                        <p class="font-medium text-blue-900">Chi nhánh TP.HCM</p>
-                                    </div>
-                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
-                                        <p class="font-medium text-blue-900">Chi nhánh Đà Nẵng</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-full bg-blue-600 text-white p-4 rounded-lg text-center mb-4">
-                                    <h3 class="text-lg font-semibold">Khối Hỗ Trợ</h3>
-                                    <p class="text-sm opacity-90">Giám đốc: Ông Phạm Văn Hùng</p>
-                                </div>
-                                <div class="w-0.5 h-8 bg-gray-300"></div>
-                                <div class="grid grid-cols-1 gap-4 w-full">
-                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
-                                        <p class="font-medium text-blue-900">Phòng Tài chính - Kế toán</p>
-                                    </div>
-                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
-                                        <p class="font-medium text-blue-900">Phòng Nhân sự - Hành chính</p>
-                                    </div>
-                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
-                                        <p class="font-medium text-blue-900">Phòng R&D</p>
-                                    </div>
-                                </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ri-24-hours-line text-2xl text-primary"></i>
+                                <span class="text-gray-300">24/7 Support</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="py-20">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Quy Trình Sản Xuất</h2>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Quy trình sản xuất hiện đại với 6 bước chính đảm
-                        bảo chất lượng sản phẩm cao nhất</p>
-                </div>
-                <div class="relative">
-                    <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 transform -translate-y-1/2"></div>
-                    <div class="grid grid-cols-2 lg:grid-cols-6 gap-8 relative z-10">
-                        <div class="text-center">
-                            <div
-                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                                <i class="ri-hammer-line"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Khai Thác</h3>
-                            <p class="text-gray-600 text-sm">Khai thác nguyên liệu từ mỏ với công nghệ hiện đại</p>
-                        </div>
-                        <div class="text-center">
-                            <div
-                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                                <i class="ri-sort-desc"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Phân Loại</h3>
-                            <p class="text-gray-600 text-sm">Phân loại và sàng lọc nguyên liệu theo tiêu chuẩn</p>
-                        </div>
-                        <div class="text-center">
-                            <div
-                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                                <i class="ri-settings-3-line"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Nghiền Tinh</h3>
-                            <p class="text-gray-600 text-sm">Nghiền tinh với độ mịn theo yêu cầu kỹ thuật</p>
-                        </div>
-                        <div class="text-center">
-                            <div
-                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                                <i class="ri-search-eye-line"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Kiểm Tra</h3>
-                            <p class="text-gray-600 text-sm">Kiểm tra chất lượng trong phòng lab hiện đại</p>
-                        </div>
-                        <div class="text-center">
-                            <div
-                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                                <i class="ri-archive-line"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Đóng Gói</h3>
-                            <p class="text-gray-600 text-sm">Đóng gói sản phẩm theo tiêu chuẩn xuất khẩu</p>
-                        </div>
-                        <div class="text-center">
-                            <div
-                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                                <i class="ri-truck-line"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Vận Chuyển</h3>
-                            <p class="text-gray-600 text-sm">Giao hàng nhanh chóng và đảm bảo chất lượng</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-16 grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://readdy.ai/api/search-image?query=Modern%20mineral%20processing%20factory%20production%20line%20with%20advanced%20machinery%2C%20workers%20in%20safety%20equipment%2C%20clean%20industrial%20environment%2C%20quality%20control%20processes%2C%20professional%20industrial%20photography&width=600&height=400&seq=process001&orientation=landscape"
-                            alt="Dây chuyền sản xuất" class="rounded-lg shadow-lg w-full object-cover object-top">
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Công Nghệ Hiện Đại</h3>
-                        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                            Chúng tôi đầu tư vào công nghệ sản xuất tiên tiến từ Đức và Nhật Bản, đảm bảo sản phẩm đạt
-                            độ mịn và độ trắng cao nhất.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 flex items-center justify-center bg-green-100 rounded mr-3">
-                                    <i class="ri-check-line text-green-600"></i>
-                                </div>
-                                <span class="text-gray-700">Hệ thống nghiền Raymond Mill công suất lớn</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 flex items-center justify-center bg-green-100 rounded mr-3">
-                                    <i class="ri-check-line text-green-600"></i>
-                                </div>
-                                <span class="text-gray-700">Phòng lab kiểm tra chất lượng đạt chuẩn ISO</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 flex items-center justify-center bg-green-100 rounded mr-3">
-                                    <i class="ri-check-line text-green-600"></i>
-                                </div>
-                                <span class="text-gray-700">Hệ thống đóng gói tự động hiện đại</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Chứng Nhận & Thành Tựu</h2>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Những chứng nhận uy tín và thành tựu đáng tự hào
-                        trong suốt hành trình phát triển</p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mx-auto mb-4">
-                            <i class="ri-award-line text-2xl text-primary"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">ISO 9001:2015</h3>
-                        <p class="text-gray-600 text-sm">Chứng nhận hệ thống quản lý chất lượng quốc tế</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        <div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                            <i class="ri-leaf-line text-2xl text-green-600"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">ISO 14001:2015</h3>
-                        <p class="text-gray-600 text-sm">Chứng nhận hệ thống quản lý môi trường</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        <div class="w-16 h-16 flex items-center justify-center bg-yellow-100 rounded-full mx-auto mb-4">
-                            <i class="ri-shield-check-line text-2xl text-yellow-600"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">OHSAS 18001</h3>
-                        <p class="text-gray-600 text-sm">Chứng nhận an toàn và sức khỏe nghề nghiệp</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        <div class="w-16 h-16 flex items-center justify-center bg-purple-100 rounded-full mx-auto mb-4">
-                            <i class="ri-star-line text-2xl text-purple-600"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Sao Vàng Đất Việt</h3>
-                        <p class="text-gray-600 text-sm">Giải thưởng doanh nghiệp tiêu biểu năm 2023</p>
-                    </div>
-                </div>
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="text-4xl font-bold text-primary mb-2">20,000+</div>
-                        <p class="text-gray-600">Tấn sản phẩm/năm</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="text-4xl font-bold text-primary mb-2">200+</div>
-                        <p class="text-gray-600">Khách hàng tin tưởng</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="text-4xl font-bold text-primary mb-2">15+</div>
-                        <p class="text-gray-600">Năm kinh nghiệm</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-20">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Hình Ảnh Công Ty</h2>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Một số hình ảnh về cơ sở vật chất và hoạt động
-                        sản xuất của công ty</p>
-                </div>
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Modern%20mineral%20processing%20factory%20exterior%20with%20clean%20industrial%20architecture%2C%20professional%20facility%20photography%20showing%20scale%20and%20modern%20design%2C%20daytime%20with%20blue%20sky&width=400&height=400&seq=factory001&orientation=squarish"
-                            alt="Nhà máy"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Advanced%20mineral%20processing%20equipment%20and%20machinery%20in%20operation%2C%20clean%20industrial%20environment%2C%20workers%20in%20safety%20gear%2C%20quality%20control%20processes&width=400&height=400&seq=factory002&orientation=squarish"
-                            alt="Dây chuyền sản xuất"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Modern%20laboratory%20with%20advanced%20testing%20equipment%2C%20technicians%20analyzing%20mineral%20samples%2C%20clean%20scientific%20environment%2C%20professional%20lab%20photography&width=400&height=400&seq=factory003&orientation=squarish"
-                            alt="Phòng thí nghiệm"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Warehouse%20storage%20of%20mineral%20products%2C%20well-organized%20industrial%20storage%20facility%2C%20workers%20managing%20inventory%2C%20clean%20environment&width=400&height=400&seq=factory004&orientation=squarish"
-                            alt="Kho bãi"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Professional%20meeting%20room%20with%20modern%20design%2C%20business%20team%20discussing%20projects%2C%20corporate%20environment%20showing%20success%20and%20professionalism&width=400&height=400&seq=factory005&orientation=squarish"
-                            alt="Phòng họp"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Quality%20control%20process%20of%20mineral%20products%2C%20close-up%20of%20testing%20procedures%2C%20professional%20industrial%20photography%20showing%20attention%20to%20detail&width=400&height=400&seq=factory006&orientation=squarish"
-                            alt="Kiểm tra chất lượng"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Automated%20packaging%20line%20for%20mineral%20products%2C%20modern%20machinery%20in%20operation%2C%20clean%20industrial%20environment%2C%20professional%20photography&width=400&height=400&seq=factory007&orientation=squarish"
-                            alt="Đóng gói"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Transportation%20fleet%20for%20mineral%20products%20delivery%2C%20modern%20trucks%20with%20company%20branding%2C%20professional%20logistics%20photography&width=400&height=400&seq=factory008&orientation=squarish"
-                            alt="Vận chuyển"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Aerial%20view%20of%20mineral%20processing%20facility%2C%20modern%20industrial%20complex%20with%20well-organized%20layout%2C%20professional%20drone%20photography&width=400&height=400&seq=factory009&orientation=squarish"
-                            alt="Toàn cảnh"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-primary text-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Cam Kết Chất Lượng</h2>
-                    <p class="text-xl opacity-90 max-w-2xl mx-auto">Chúng tôi cam kết mang đến cho khách hàng những sản
-                        phẩm và dịch vụ tốt nhất</p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="text-center">
+                <div class="relative hidden lg:block">
+                    <div class="absolute -top-[140px] -right-[140px] w-[280px] h-[280px]">
                         <div
-                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
-                            <i class="ri-shield-check-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Chất Lượng Đảm Bảo</h3>
-                        <p class="opacity-90">100% sản phẩm được kiểm tra chất lượng trước khi xuất xưởng</p>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
-                            <i class="ri-time-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Giao Hàng Đúng Hẹn</h3>
-                        <p class="opacity-90">Cam kết giao hàng đúng thời gian đã thỏa thuận với khách hàng</p>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
-                            <i class="ri-customer-service-2-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Hỗ Trợ 24/7</h3>
-                        <p class="opacity-90">Đội ngũ kỹ thuật sẵn sàng hỗ trợ khách hàng mọi lúc mọi nơi</p>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
-                            <i class="ri-price-tag-3-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Giá Cả Cạnh Tranh</h3>
-                        <p class="opacity-90">Mức giá hợp lý nhất thị trường với chất lượng vượt trội</p>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
-                            <i class="ri-refresh-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Đổi Trả Linh Hoạt</h3>
-                        <p class="opacity-90">Chính sách đổi trả linh hoạt nếu sản phẩm không đạt yêu cầu</p>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
-                            <i class="ri-leaf-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Thân Thiện Môi Trường</h3>
-                        <p class="opacity-90">Quy trình sản xuất xanh, bảo vệ môi trường và phát triển bền vững</p>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button
-                        class="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold !rounded-button transition-colors whitespace-nowrap">
-                        Liên hệ tư vấn
-                    </button>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-gray-900 text-white">
-        <div class="container mx-auto px-4 py-16">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div>
-                    <div class="text-2xl font-['Pacifico'] text-primary mb-4">logo</div>
-                    <p class="text-gray-300 mb-4">Chuyên sản xuất và cung cấp bột đá chất lượng cao cho các ngành công
-                        nghiệp.</p>
-                    <div class="flex space-x-4">
-                        <div
-                            class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-primary transition-colors cursor-pointer">
-                            <i class="ri-facebook-fill"></i>
-                        </div>
-                        <div
-                            class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-primary transition-colors cursor-pointer">
-                            <i class="ri-twitter-fill"></i>
-                        </div>
-                        <div
-                            class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded hover:bg-primary transition-colors cursor-pointer">
-                            <i class="ri-linkedin-fill"></i>
+                            class="w-full h-full bg-gradient-to-r from-blue-500/20 to-primary/20 rounded-full animate-pulse delay-300">
                         </div>
                     </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Liên kết nhanh</h3>
-                    <ul class="space-y-2">
-                        <li><a href="https://readdy.ai/home/ce4238be-d93e-4e30-8176-429edf64a1ef/03f8221c-473c-484b-98ae-7658723b53e5"
-                                data-readdy="true" class="text-gray-300 hover:text-white transition-colors">Trang
-                                chủ</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Giới thiệu</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Tin tức</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Liên hệ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Sản phẩm chính</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Bột TALC A</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Bột TALC C</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Bột đá CaCO3 8
-                                Micron</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Bột đá CaCO3 10
-                                Micron</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Nhận tin tức</h3>
-                    <p class="text-gray-300 mb-4">Đăng ký để nhận thông tin mới nhất về sản phẩm và khuyến mãi.</p>
-                    <div class="flex gap-2">
-                        <input type="email" placeholder="Email của bạn"
-                            class="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded text-sm focus:outline-none focus:border-primary">
-                        <button
-                            class="bg-primary hover:bg-blue-700 px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                            <div class="w-4 h-4 flex items-center justify-center">
-                                <i class="ri-send-plane-line"></i>
-                            </div>
-                        </button>
+                    <div class="relative bg-darker/50 backdrop-blur-sm rounded-2xl p-8 border border-white/5">
+                        <div id="tradingChart" class="w-full h-[400px]"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="border-t border-gray-800">
-            <div class="container mx-auto px-4 py-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm">© 2024 Công ty TNHH Khoáng Sản Việt. Tất cả quyền được bảo lưu.</p>
-                    <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Chính sách bảo
-                            mật</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Điều khoản sử
-                            dụng</a>
+    </section>
+    <section class="py-20 bg-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Featured Benefits</h2>
+                <p class="text-xl text-gray-300">Exclusive advantages for our valued members</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dark/50 p-8 rounded-xl border border-gray-800 hover:border-primary/50 transition-colors">
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-shield-check-line text-2xl text-primary"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Secure Trading</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Multi-layer security with AES-256 encryption, 2FA authentication, and cold storage
+                        to ensure your assets are always maximally protected.
+                    </p>
+                </div>
+                <div class="bg-dark/50 p-8 rounded-xl border border-gray-800 hover:border-primary/50 transition-colors">
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-shield-check-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Secure Trading</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Multi-layer security with AES-256 encryption, 2FA authentication, and cold storage
+                        to ensure your assets are always maximally protected.
+                    </p>
+                </div>
+                <div class="bg-dark/50 p-8 rounded-xl border border-gray-800 hover:border-primary/50 transition-colors">
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-shield-check-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Secure Trading</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Multi-layer security with AES-256 encryption, 2FA authentication, and cold storage
+                        to ensure your assets are always maximally protected.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="https://readdy.ai/api/search-image?query=cryptocurrency%20blockchain%20technology%20illustration%20showing%20bitcoin%20ethereum%20and%20other%20digital%20coins%20with%20network%20connections%2C%20modern%203D%20style%2C%20blue%20and%20gold%20color%20scheme%2C%20dark%20background%20with%20glowing%20elements%2C%20professional%20financial%20technology%20visualization%2C%20detailed%20coin%20designs%20with%20blockchain%20network%20pattern&width=600&height=500&seq=crypto-intro&orientation=landscape"
+                        alt="Cryptocurrency Introduction" class="w-full h-auto rounded-xl shadow-lg object-top">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-6">Introduction to Cryptocurrency</h2>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                        Digital currency secured by blockchain technology, enabling fast, transparent, and
+                        intermediary-free transactions. This is the future of the global financial system.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                                <i class="ri-bitcoin-line text-xl text-orange-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-200">Bitcoin (BTC)</div>
+                                <div class="text-sm text-gray-400">$49,800</div>
+                            </div>
+                            <div class="ml-auto text-green-400 font-semibold">+2.5%</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                                <i class="ri-currency-line text-xl text-blue-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-200">Ethereum (ETH)</div>
+                                <div class="text-sm text-gray-400">$3,420</div>
+                            </div>
+                            <div class="ml-auto text-green-400 font-semibold">+1.8%</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                                <i class="ri-currency-line text-xl text-green-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-200">Binance Coin (BNB)</div>
+                                <div class="text-sm text-gray-400">$512</div>
+                            </div>
+                            <div class="ml-auto text-red-400 font-semibold">-0.3%</div>
+                        </div>
+                    </div>
+                    <div class="bg-dark/50 border border-gray-800 p-6 rounded-xl">
+                        <div id="priceChart" style="width: 100%; height: 200px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Membership Benefits</h2>
+                <p class="text-xl text-gray-300">Special offers and rewards for our members</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-darker p-8 rounded-xl border border-gray-800 hover:border-primary/50 transition-colors">
+                    <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-vip-crown-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">VIP Benefits</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-primary mr-2"></i>
+                            <span>Zero trading fees for first month</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-primary mr-2"></i>
+                            <span>Priority customer support 24/7</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-primary mr-2"></i>
+                            <span>Exclusive market analysis reports</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-darker p-8 rounded-xl border border-gray-800 hover:border-primary/50 transition-colors">
+                    <div class="w-16 h-16 bg-secondary/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-gift-line text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Welcome Package</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            <span>$50 welcome bonus</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            <span>Free crypto learning courses</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            <span>Risk-free first trade up to $100</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-darker p-8 rounded-xl border border-gray-800 hover:border-primary/50 transition-colors">
+                    <div class="w-16 h-16 bg-orange-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-team-line text-2xl text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Referral Rewards</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-orange-500 mr-2"></i>
+                            <span>40% commission on trading fees</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-orange-500 mr-2"></i>
+                            <span>$100 bonus per referral</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-check-line text-orange-500 mr-2"></i>
+                            <span>Special rewards for top referrers</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-gift-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Sign-up Bonus</h3>
+                    <p class="text-gray-600">
+                        Get $50 instantly when you register and successfully verify your account.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-vip-crown-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Chương trình VIP</h3>
+                    <p class="text-gray-600">
+                        Hưởng phí giao dịch ưu đãi, hỗ trợ ưu tiên và nhiều quyền lợi đặc biệt khác.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-orange-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-team-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Giới thiệu bạn bè</h3>
+                    <p class="text-gray-600">
+                        Nhận 20% hoa hồng từ phí giao dịch của bạn bè mà bạn giới thiệu tham gia.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-graduation-cap-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Khóa học miễn phí</h3>
+                    <p class="text-gray-600">
+                        Truy cập miễn phí các khóa học về cryptocurrency và trading từ chuyên gia.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-smartphone-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">App di động</h3>
+                    <p class="text-gray-600">
+                        Ứng dụng di động thân thiện, giao dịch mọi lúc mọi nơi với tốc độ lightning.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-gradient-to-r from-darker to-dark relative overflow-hidden border-t border-gray-800">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://readdy.ai/api/search-image?query=abstract%20cryptocurrency%20background%20pattern%20with%20bitcoin%20symbols%2C%20blockchain%20network%20visualization%2C%20geometric%20shapes%20and%20digital%20elements%2C%20monochrome%20white%20overlay%20design%2C%20suitable%20for%20call%20to%20action%20section%20background&width=1920&height=600&seq=cta-bg&orientation=landscape"
+                alt="CTA Background" class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Ready to Start Your Crypto Journey?
+            </h2>
+            <p class="text-xl text-blue-100 mb-12">
+                Join millions of users who trust us for cryptocurrency investment and trading
+            </p>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-md mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <input type="email" placeholder="Enter your email address"
+                            class="w-full px-6 py-4 rounded-button text-gray-900 placeholder-gray-500 border-none focus:outline-none focus:ring-2 focus:ring-white/50">
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-white text-primary px-8 py-4 text-lg font-semibold !rounded-button hover:bg-gray-100 transition-colors whitespace-nowrap">
+                        Join Now
+                    </button>
+                </form>
+                <p class="text-sm text-blue-100 mt-4">
+                    By signing up, you agree to our <a href="#" class="underline">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-darker text-white py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="font-['Pacifico'] text-3xl text-primary mb-4">logo</div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Leading cryptocurrency trading platform, delivering a safe and efficient
+                        investment experience for all users.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-facebook-fill text-lg"></i>
+                        </div>
+                        <div
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-twitter-fill text-lg"></i>
+                        </div>
+                        <div
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-instagram-fill text-lg"></i>
+                        </div>
+                        <div
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-telegram-fill text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Spot Trading</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Futures Trading</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Staking</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">NFT Marketplace</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">DeFi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">API Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Trading Fees</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Security</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2025 CryptoVN. All rights reserved.
+                </div>
+                <div class="flex space-x-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
-    <script id="search-toggle">
+    <script id="price-chart">
         document.addEventListener('DOMContentLoaded', function () {
-            const searchToggle = document.getElementById('searchToggle');
-            const searchBar = document.getElementById('searchBar');
-            searchToggle.addEventListener('click', function () {
-                searchBar.classList.toggle('hidden');
-            });
+            const chartDom = document.getElementById('priceChart');
+            const tradingChartDom = document.getElementById('tradingChart');
+            const myChart = echarts.init(chartDom);
+            const tradingChart = tradingChartDom && echarts.init(tradingChartDom);
+            if (tradingChart) {
+                const tradingOption = {
+                    animation: false,
+                    backgroundColor: 'transparent',
+                    grid: {
+                        left: '3%',
+                        right: '3%',
+                        top: '3%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        axisLine: { show: false },
+                        axisTick: { show: false },
+                        axisLabel: { color: '#9CA3AF', fontSize: 12 }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        axisLine: { show: false },
+                        axisTick: { show: false },
+                        axisLabel: { color: '#9CA3AF', fontSize: 12 },
+                        splitLine: { lineStyle: { color: '#374151' } }
+                    },
+                    series: [
+                        {
+                            name: 'Bitcoin',
+                            type: 'line',
+                            smooth: true,
+                            symbol: 'none',
+                            data: [28000, 32000, 35000, 42000, 38000, 44000, 48000, 45000, 49000, 52000, 47000, 50000],
+                            lineStyle: { color: 'rgba(87, 181, 231, 1)', width: 3 },
+                            areaStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0, y: 0, x2: 0, y2: 1,
+                                    colorStops: [
+                                        { offset: 0, color: 'rgba(87, 181, 231, 0.2)' },
+                                        { offset: 1, color: 'rgba(87, 181, 231, 0)' }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            name: 'Ethereum',
+                            type: 'line',
+                            smooth: true,
+                            symbol: 'none',
+                            data: [1800, 2200, 2500, 2800, 2600, 3000, 3200, 3100, 3400, 3600, 3400, 3500],
+                            lineStyle: { color: 'rgba(141, 211, 199, 1)', width: 3 },
+                            areaStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0, y: 0, x2: 0, y2: 1,
+                                    colorStops: [
+                                        { offset: 0, color: 'rgba(141, 211, 199, 0.2)' },
+                                        { offset: 1, color: 'rgba(141, 211, 199, 0)' }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    tooltip: {
+                        trigger: 'axis',
+                        backgroundColor: 'rgba(17, 24, 39, 0.9)',
+                        borderColor: '#374151',
+                        textStyle: { color: '#fff' },
+                        formatter: function (params) {
+                            let result = params[0].axisValue + '<br/>';
+                            params.forEach(param => {
+                                result += `${param.seriesName}: $${param.value.toLocaleString()}<br/>`;
+                            });
+                            return result;
+                        }
+                    },
+                    legend: {
+                        data: ['Bitcoin', 'Ethereum'],
+                        textStyle: { color: '#9CA3AF' },
+                        top: 0,
+                        right: 0
+                    }
+                };
+                tradingChart.setOption(tradingOption);
+                window.addEventListener('resize', function () {
+                    tradingChart.resize();
+                });
+            }
+            const option = {
+                animation: false,
+                backgroundColor: 'transparent',
+                grid: {
+                    left: 0,
+                    right: 0,
+                    top: 20,
+                    bottom: 20,
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'],
+                    axisLine: { show: false },
+                    axisTick: { show: false },
+                    axisLabel: { color: '#9CA3AF', fontSize: 12 }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: { show: false },
+                    axisTick: { show: false },
+                    axisLabel: { color: '#9CA3AF', fontSize: 12 },
+                    splitLine: { lineStyle: { color: '#374151' } }
+                },
+                series: [{
+                    data: [1240, 1245, 1250, 1248, 1252, 1247, 1245],
+                    type: 'line',
+                    smooth: true,
+                    symbol: 'none',
+                    lineStyle: { color: 'rgba(87, 181, 231, 1)', width: 3 },
+                    areaStyle: {
+                        color: {
+                            type: 'linear',
+                            x: 0, y: 0, x2: 0, y2: 1,
+                            colorStops: [
+                                { offset: 0, color: 'rgba(87, 181, 231, 0.1)' },
+                                { offset: 1, color: 'rgba(87, 181, 231, 0)' }
+                            ]
+                        }
+                    }
+                }],
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderColor: '#E5E7EB',
+                    textStyle: { color: '#1F2937' }
+                }
+            };
+            myChart.setOption(option);
         });
     </script>
     <script id="mobile-menu">
         document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileProductToggle = document.getElementById('mobileProductToggle');
-            const mobileProductMenu = document.getElementById('mobileProductMenu');
-            mobileMenuToggle.addEventListener('click', function () {
-                mobileMenu.classList.toggle('hidden');
-            });
-            mobileProductToggle.addEventListener('click', function () {
-                mobileProductMenu.classList.toggle('hidden');
-            });
-        });
-    </script>
-    <script id="smooth-scroll">
-        document.addEventListener('DOMContentLoaded', function () {
-            const links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+            const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+            const mobileMenu = document.querySelector('[data-mobile-menu]');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
                 });
-            });
+            }
         });
     </script>
 </body>

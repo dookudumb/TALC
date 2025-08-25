@@ -47,24 +47,6 @@
     include ("../includes/header_child.php");
     ?>
 
-    <!-- Success Popup Modal -->
-    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg shadow-lg p-8 text-center max-w-sm">
-            <h2 class="text-2xl font-bold text-primary mb-4">Gửi thành công!</h2>
-            <p class="text-gray-700 mb-6">Thông tin của bạn đã được gửi. Chúng tôi sẽ liên hệ lại với bạn sớm nhất.</p>
-            <button onclick="document.getElementById('successModal').classList.add('hidden')" class="bg-primary text-white px-6 py-2 rounded-button font-semibold">Đóng</button>
-        </div>
-    </div>
-
-    <!-- Error Popup Modal -->
-    <div id="errorModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg shadow-lg p-8 text-center max-w-sm">
-            <h2 class="text-2xl font-bold text-red-600 mb-4">Gửi thất bại!</h2>
-            <p class="text-gray-700 mb-6">Có lỗi xảy ra, vui lòng thử lại hoặc liên hệ trực tiếp với chúng tôi.</p>
-            <button onclick="document.getElementById('errorModal').classList.add('hidden')" class="bg-red-600 text-white px-6 py-2 rounded-button font-semibold">Đóng</button>
-        </div>
-    </div>
-
     <main class="pt-16">
         <section class="relative h-96 flex items-center justify-center overflow-hidden"
             style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20corporate%20office%20building%20exterior%20with%20professional%20business%20environment%2C%20glass%20facade%20architecture%2C%20clean%20urban%20setting%2C%20blue%20sky%20background%2C%20professional%20corporate%20photography%20showing%20accessibility%20and%20modern%20design&width=1920&height=600&seq=contact-hero&orientation=landscape'); background-size: cover; background-position: center;">
@@ -174,7 +156,7 @@
                             bạn trong thời gian sớm nhất</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <form class="space-y-6" action="./insert-contact.php" method="POST">
+                        <form class="space-y-6">
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Họ và tên
@@ -223,13 +205,13 @@
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-sm resize-none"
                                     placeholder="Vui lòng mô tả chi tiết yêu cầu của bạn..."></textarea>
                             </div>
-                            <!-- <div class="flex items-start">
+                            <div class="flex items-start">
                                 <input type="checkbox" id="agreement" name="agreement" required
                                     class="mt-1 mr-3 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
                                 <label for="agreement" class="text-sm text-gray-600">Tôi đồng ý với <a href="#"
                                         class="text-primary hover:underline">chính sách bảo mật</a> và cho phép công ty
                                     liên hệ lại với tôi.</label>
-                            </div> -->
+                            </div>
                             <div class="text-center">
                                 <button type="submit"
                                     class="bg-primary hover:bg-blue-700 text-white px-8 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
@@ -282,19 +264,27 @@
         </section>
     </main>
 
-    <?php
+     <?php
     include ("../includes/footer_child.php");
     include ("../includes/cta.php");
-    ?>
+   ?>
 
-    <script>
-        // Show popup if success=1 is in URL
-        if (window.location.search.includes('success=1')) {
-            document.getElementById('successModal').classList.remove('hidden');
-            // Optionally, remove the query param from URL after showing
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
+    <script id="form-validation">
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const checkbox = document.getElementById('agreement');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!checkbox.checked) {
+                    alert('Vui lòng đồng ý với chính sách bảo mật để tiếp tục.');
+                    return;
+                }
+                alert('Cảm ơn bạn đã gửi tin nhắn! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.');
+                form.reset();
+            });
+        });
     </script>
+
 </body>
 
 </html>
