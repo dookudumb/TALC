@@ -1,11 +1,16 @@
+<?php
+include __DIR__ . '../config/db_connection.php';
 
-<?php 
-include './config/db_connection.php';
-
-$sql= "SELECT `news_id`,`news_name`,`new_summary`,`news_img`,`create_time` FROM `news` limit 3";
+// Lấy danh sách sản phẩm nổi bật
+$sql = "SELECT p.product_id, p.product_name, p.product_description, p.product_price, p.product_img
+        FROM products p
+        WHERE p.outstanding_products = 'true'
+        ORDER BY p.create_at DESC
+        LIMIT 8";
 
 $result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -77,7 +82,6 @@ $result = $conn->query($sql);
                     </div>
                     <div>
                         <h2 class="text-4xl font-bold text-gray-900 mb-6">Về Chúng Tôi</h2>
-                        
                         <p class="text-gray-600 text-lg mb-6 leading-relaxed">
                             Với hơn 15 năm kinh nghiệm trong lĩnh vực khai thác và chế biến khoáng sản, chúng tôi tự hào
                             là nhà cung cấp hàng đầu các sản phẩm bột đá chất lượng cao tại Việt Nam.
@@ -102,106 +106,20 @@ $result = $conn->query($sql);
                         độ tinh khiết vượt trội</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <?php while($row = $result->fetch_assoc()){ ?>
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                         <img src="https://readdy.ai/api/search-image?query=High%20quality%20white%20TALC%20powder%20in%20professional%20packaging%20container%2C%20pure%20white%20fine%20powder%20texture%2C%20clean%20minimal%20background%2C%20product%20photography%20with%20soft%20lighting%2C%20industrial%20grade%20mineral%20powder&width=300&height=200&seq=prod001&orientation=landscape"
                             alt="Bột TALC A" class="w-full h-48 object-cover object-top">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bột TALC A</h3>
-                            <p class="text-gray-600 mb-4">Bột TALC siêu mịn với độ trắng cao, ứng dụng trong ngành sơn
-                                và nhựa</p>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2"><?php echo $row['product_name'] ?> </h3>
+                            <p class="text-gray-600 mb-4"><?php echo $row['product_description'] ?></p>
                             <button
                                 class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                                Chi tiết
+                               <a href="./san-pham/index.php?id=<?php echo $row['product_id']?>"> Chi tiết </a>
                             </button>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=Premium%20white%20calcium%20carbonate%20CaCO3%20powder%20in%20industrial%20container%2C%20ultra%20fine%20white%20mineral%20powder%2C%20clean%20professional%20product%20photography%2C%20bright%20lighting%2C%20minimal%20background&width=300&height=200&seq=prod002&orientation=landscape"
-                            alt="Bột đá CaCO3 8 Micron" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bột đá CaCO3 8 Micron</h3>
-                            <p class="text-gray-600 mb-4">Bột đá siêu mịn 8 micron, độ trắng cao, phù hợp cho ngành giấy
-                            </p>
-                            <button
-                                class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                                Chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=Fine%20white%20TALC%20C%20powder%20in%20professional%20packaging%2C%20smooth%20texture%20white%20mineral%20powder%2C%20clean%20industrial%20product%20photography%2C%20soft%20lighting%2C%20minimal%20background%20for%20quality%20presentation&width=300&height=200&seq=prod003&orientation=landscape"
-                            alt="Bột TALC C" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bột TALC C</h3>
-                            <p class="text-gray-600 mb-4">Bột TALC chất lượng cao, ứng dụng trong mỹ phẩm và dược phẩm
-                            </p>
-                            <button
-                                class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                                Chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=High%20grade%20calcium%20carbonate%20powder%2010%20micron%20in%20industrial%20container%2C%20pure%20white%20fine%20mineral%20powder%2C%20professional%20product%20photography%2C%20clean%20bright%20background%2C%20quality%20industrial%20material&width=300&height=200&seq=prod004&orientation=landscape"
-                            alt="Bột đá CaCO3 10 Micron" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bột đá CaCO3 10 Micron</h3>
-                            <p class="text-gray-600 mb-4">Bột đá 10 micron, chất lượng ổn định cho ngành nhựa và cao su
-                            </p>
-                            <button
-                                class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                                Chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=Ultra%20fine%20white%20TALC%20powder%20for%20cosmetic%20industry%2C%20premium%20quality%20mineral%20powder%20in%20elegant%20packaging%2C%20clean%20professional%20product%20photography%20with%20soft%20lighting&width=300&height=200&seq=prod005&orientation=landscape"
-                            alt="Bột TALC Mỹ phẩm" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bột TALC Mỹ phẩm</h3>
-                            <p class="text-gray-600 mb-4">Bột TALC siêu mịn cao cấp, chuyên dụng cho ngành mỹ phẩm</p>
-                            <button
-                                class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                                Chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=High%20purity%20calcium%20carbonate%20powder%2015%20micron%20in%20industrial%20packaging%2C%20professional%20white%20mineral%20powder%20photography%2C%20clean%20bright%20background%2C%20quality%20material%20presentation&width=300&height=200&seq=prod006&orientation=landscape"
-                            alt="Bột đá CaCO3 15 Micron" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bột đá CaCO3 15 Micron</h3>
-                            <p class="text-gray-600 mb-4">Bột đá 15 micron, lý tưởng cho ngành sản xuất sơn</p>
-                            <button
-                                class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                                Chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=Premium%20TALC%20powder%20for%20pharmaceutical%20industry%2C%20medical%20grade%20white%20mineral%20powder%20in%20sterile%20packaging%2C%20clean%20professional%20product%20photography%2C%20bright%20lighting&width=300&height=200&seq=prod007&orientation=landscape"
-                            alt="Bột TALC Dược phẩm" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bột TALC Dược phẩm</h3>
-                            <p class="text-gray-600 mb-4">Bột TALC tinh khiết, đạt tiêu chuẩn dược phẩm</p>
-                            <button
-                                class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                                Chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="https://readdy.ai/api/search-image?query=Ultra%20fine%20calcium%20carbonate%20powder%20for%20paper%20industry%2C%20high%20brightness%20white%20mineral%20powder%20in%20industrial%20packaging%2C%20professional%20product%20photography%20with%20clean%20background&width=300&height=200&seq=prod008&orientation=landscape"
-                            alt="Bột đá CaCO3 Giấy" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bột đá CaCO3 Giấy</h3>
-                            <p class="text-gray-600 mb-4">Bột đá siêu mịn, độ trắng cao cho ngành giấy</p>
-                            <button
-                                class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
-                                Chi tiết
-                            </button>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
                 <div class="text-center mt-12">
                     <button
@@ -219,22 +137,42 @@ $result = $conn->query($sql);
                         ngành công nghiệp</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <?php
-                    while ($row = $result->fetch_assoc()):
-                    ?>
                     <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                        <img src="<?php echo $row['news_img']; ?>"
-                            alt="<?php echo $row['news_name'];?>" class="w-full h-48 object-cover object-top">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20industrial%20mineral%20processing%20technology%20with%20advanced%20machinery%2C%20clean%20factory%20environment%2C%20quality%20control%20equipment%2C%20professional%20industrial%20photography%2C%20bright%20lighting&width=400&height=250&seq=news001&orientation=landscape"
+                            alt="Tin tức 1" class="w-full h-48 object-cover object-top">
                         <div class="p-6">
-                            <div class="text-sm text-gray-500 mb-2"><?php echo $row['create_time'];?></div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3"><?php echo $row['news_name'];?></h3>
-                            <p class="text-gray-600 mb-4"><?php echo $row['new_summary'];?></p>
-                            <a href="./tin-tuc/chi-tiet-tin-tuc.php?id=<?php echo $row['news_id'];?>" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
+                            <div class="text-sm text-gray-500 mb-2">15 Tháng 12, 2024</div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Công nghệ mới trong sản xuất bột đá
+                                CaCO3</h3>
+                            <p class="text-gray-600 mb-4">Ứng dụng công nghệ hiện đại giúp nâng cao chất lượng và độ
+                                tinh khiết của sản phẩm bột đá CaCO3...</p>
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
                         </div>
                     </article>
-                    <?php 
-                    endwhile;
-                    ?>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="https://readdy.ai/api/search-image?query=Environmental%20sustainability%20in%20mineral%20processing%20industry%2C%20green%20technology%2C%20eco-friendly%20manufacturing%20process%2C%20clean%20energy%20usage%20in%20stone%20powder%20production&width=400&height=250&seq=news002&orientation=landscape"
+                            alt="Tin tức 2" class="w-full h-48 object-cover object-top">
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">10 Tháng 12, 2024</div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Xu hướng phát triển bền vững trong
+                                ngành khoáng sản</h3>
+                            <p class="text-gray-600 mb-4">Cam kết bảo vệ môi trường và phát triển bền vững trong quá
+                                trình sản xuất và chế biến khoáng sản...</p>
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="https://readdy.ai/api/search-image?query=Quality%20control%20laboratory%20for%20mineral%20powder%20testing%2C%20scientific%20equipment%2C%20professional%20testing%20environment%2C%20white%20lab%20coats%2C%20precision%20instruments%20for%20powder%20analysis&width=400&height=250&seq=news003&orientation=landscape"
+                            alt="Tin tức 3" class="w-full h-48 object-cover object-top">
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">05 Tháng 12, 2024</div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Tiêu chuẩn chất lượng mới cho bột TALC
+                            </h3>
+                            <p class="text-gray-600 mb-4">Áp dụng các tiêu chuẩn chất lượng quốc tế mới nhằm đảm bảo sản
+                                phẩm đạt chất lượng cao nhất...</p>
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -245,7 +183,7 @@ $result = $conn->query($sql);
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <button
                         class="bg-white text-primary hover:bg-gray-100 px-8 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
-                        Liên hệ ngay
+                         <a href="./lien-he/index.php">Liên hệ ngay</a>
                     </button>
                     <button
                         class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
@@ -259,7 +197,7 @@ $result = $conn->query($sql);
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div class="bg-white shadow-lg p-8 rounded-lg">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6">Gửi thông tin liên hệ</h3>
-                        <form id="contactForm" class="space-y-4">
+                        <form action="modules/save_contact.php" method="POST" id="contactForm" class="space-y-4">
                             <div>
                                 <input type="text" name="name" placeholder="Họ và tên" required
                                     class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary">
@@ -323,7 +261,7 @@ $result = $conn->query($sql);
     include ("./includes/footer.php");
     include ("./includes/cta.php");
    ?>
-    <script id="contact-form">
+    <!-- <script id="contact-form">
         document.addEventListener('DOMContentLoaded', function () {
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
@@ -347,7 +285,7 @@ $result = $conn->query($sql);
                 });
             }
         });
-    </script>
+    </script> -->
     <script id="smooth-scroll">
         document.addEventListener('DOMContentLoaded', function () {
             const links = document.querySelectorAll('a[href^="#"]');
