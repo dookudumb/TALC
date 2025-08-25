@@ -4,7 +4,7 @@ $current_page = isset($current_page) ? $current_page : '';
 
 // Mảng ánh xạ tên trang với các liên kết
 $pages = [
-    'Trang Chủ' => './index.php',
+    'Trang Chủ' => './',
     'Giới thiệu' => './gioi-thieu/index.php',
     'Sản phẩm' => 'san-pham.php',
     'Tin tức' => './tin-tuc/index.php',
@@ -99,34 +99,33 @@ $pages = [
 </header>
 
 <script id="search-toggle">
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const searchToggle = document.getElementById('searchToggle');
         const searchBar = document.getElementById('searchBar');
-        searchToggle.addEventListener('click', function() {
+        searchToggle.addEventListener('click', function () {
             searchBar.classList.toggle('hidden');
         });
     });
 </script>
 <script id="mobile-menu">
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileProductToggle = document.getElementById('mobileProductToggle');
         const mobileProductMenu = document.getElementById('mobileProductMenu');
-        mobileMenuToggle.addEventListener('click', function() {
+        mobileMenuToggle.addEventListener('click', function () {
             mobileMenu.classList.toggle('hidden');
         });
-        mobileProductToggle.addEventListener('click', function() {
+        mobileProductToggle.addEventListener('click', function () {
             mobileProductMenu.classList.toggle('hidden');
         });
     });
 </script>
 <script id="product-dropdown">
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const productDropdownBtn = document.getElementById('productDropdownBtn');
         const productDropdownMenu = document.getElementById('productDropdownMenu');
         let isDropdownOpen = false;
-
         function toggleDropdown() {
             isDropdownOpen = !isDropdownOpen;
             if (isDropdownOpen) {
@@ -139,18 +138,17 @@ $pages = [
                 productDropdownBtn.classList.remove('text-primary');
             }
         }
-
         function closeDropdown() {
             isDropdownOpen = false;
             productDropdownMenu.classList.remove('opacity-100', 'visible');
             productDropdownMenu.classList.add('opacity-0', 'invisible');
             productDropdownBtn.classList.remove('text-primary');
         }
-        productDropdownBtn.addEventListener('click', function(e) {
+        productDropdownBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             toggleDropdown();
         });
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const productDropdown = document.getElementById('productDropdown');
             if (!productDropdown.contains(e.target)) {
                 closeDropdown();
