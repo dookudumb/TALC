@@ -1,6 +1,14 @@
+<?php
+include '../config/db_connection.php';
+
+$sql= "SELECT `news_id`,`news_name`,`new_summary`,`news_img`,`news_author`,`create_time` FROM `news`";
+
+$result = $conn->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="vi">
-
+<!-- comment -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,174 +120,28 @@
         <section class="py-12">
             <div class="container mx-auto px-4">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="newsGrid">
+                    <?php
+                    while ($row = $result->fetch_assoc()):
+                    ?>
                     <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="technology" data-date="2024-12-20">
-                        <img src="https://readdy.ai/api/search-image?query=Advanced%20mineral%20processing%20technology%20with%20modern%20machinery%20and%20automation%20systems%2C%20clean%20industrial%20environment%2C%20high-tech%20equipment%20for%20stone%20powder%20production%2C%20professional%20factory%20setting%20with%20quality%20control%20systems&width=400&height=250&seq=news001&orientation=landscape"
-                            alt="Công nghệ mới trong sản xuất bột đá" class="w-full h-48 object-cover object-top">
+                         data-date="2024-12-20">
+                        <img src="<?php echo $row['news_img'];?>"
+                            alt="<?php echo $row['news_name'];?>" class="w-full h-48 object-cover object-top">
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Công
-                                    nghệ</span>
-                                <span class="text-sm text-gray-500">20 Tháng 12, 2024</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"><?php echo $row['news_author'];?></span>
+                                <span class="text-sm text-gray-500"><?php echo $row['create_time'];?></span>
                             </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Công nghệ mới trong sản xuất bột đá
-                                CaCO3 siêu mịn</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Ứng dụng công nghệ xử lý tiên tiến giúp nâng cao
-                                chất lượng và độ tinh khiết của sản phẩm bột đá CaCO3, đạt độ mịn dưới 5 micron với hiệu
-                                suất cao...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3"><?php echo $row['news_name'];?></h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3"><?php echo $row['new_summary'];?></p>
+                            <a href="./chi-tiet-tin-tuc.php?id=<?php echo $row['news_id'];?>"
                                 data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
                         </div>
                     </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="environment" data-date="2024-12-18">
-                        <img src="https://readdy.ai/api/search-image?query=Green%20sustainable%20mining%20and%20mineral%20processing%20with%20environmental%20protection%20measures%2C%20eco-friendly%20industrial%20facility%2C%20renewable%20energy%20systems%2C%20clean%20production%20environment%20with%20nature%20integration&width=400&height=250&seq=news002&orientation=landscape"
-                            alt="Phát triển bền vững" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Môi
-                                    trường</span>
-                                <span class="text-sm text-gray-500">18 Tháng 12, 2024</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Cam kết phát triển bền vững trong ngành
-                                khoáng sản</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Triển khai các giải pháp thân thiện môi trường
-                                trong quá trình khai thác và chế biến, giảm thiểu tác động đến hệ sinh thái và cộng đồng
-                                địa phương...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
-                                data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="product" data-date="2024-12-15">
-                        <img src="https://readdy.ai/api/search-image?query=High%20quality%20TALC%20powder%20products%20with%20new%20international%20standards%20certification%2C%20laboratory%20testing%20equipment%2C%20quality%20control%20process%2C%20professional%20product%20analysis%20and%20certification%20documentation&width=400&height=250&seq=news003&orientation=landscape"
-                            alt="Tiêu chuẩn chất lượng mới" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Sản
-                                    phẩm</span>
-                                <span class="text-sm text-gray-500">15 Tháng 12, 2024</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Tiêu chuẩn chất lượng mới cho bột TALC
-                                cao cấp</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Áp dụng các tiêu chuẩn chất lượng quốc tế ISO
-                                9001:2015 và ASTM D5105 mới nhằm đảm bảo sản phẩm đạt chất lượng cao nhất cho ngành mỹ
-                                phẩm...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
-                                data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="technology" data-date="2024-12-12">
-                        <img src="https://readdy.ai/api/search-image?query=Automated%20quality%20control%20system%20for%20mineral%20powder%20production%2C%20digital%20monitoring%20equipment%2C%20real-time%20analysis%20technology%2C%20modern%20laboratory%20with%20precision%20instruments%20and%20computer%20systems&width=400&height=250&seq=news004&orientation=landscape"
-                            alt="Hệ thống kiểm soát chất lượng" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Công
-                                    nghệ</span>
-                                <span class="text-sm text-gray-500">12 Tháng 12, 2024</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Hệ thống kiểm soát chất lượng tự động
-                                hóa</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Đầu tư hệ thống kiểm soát chất lượng tự động với
-                                công nghệ AI, giám sát liên tục quá trình sản xuất và đảm bảo chất lượng sản phẩm ổn
-                                định...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
-                                data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="product" data-date="2024-12-10">
-                        <img src="https://readdy.ai/api/search-image?query=New%20calcium%20carbonate%20product%20line%20for%20pharmaceutical%20industry%2C%20medical%20grade%20mineral%20powder%20in%20sterile%20packaging%2C%20pharmaceutical%20manufacturing%20facility%2C%20clean%20room%20environment%20with%20quality%20standards&width=400&height=250&seq=news005&orientation=landscape"
-                            alt="Dòng sản phẩm mới" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Sản
-                                    phẩm</span>
-                                <span class="text-sm text-gray-500">10 Tháng 12, 2024</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Ra mắt dòng sản phẩm CaCO3 cho ngành
-                                dược phẩm</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Giới thiệu dòng sản phẩm bột đá CaCO3 đạt tiêu
-                                chuẩn USP/EP cho ngành dược phẩm, với độ tinh khiết cao và quy trình sản xuất nghiêm
-                                ngặt...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
-                                data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="environment" data-date="2024-12-08">
-                        <img src="https://readdy.ai/api/search-image?query=Water%20treatment%20and%20recycling%20system%20in%20mineral%20processing%20plant%2C%20environmental%20protection%20equipment%2C%20clean%20water%20technology%2C%20sustainable%20industrial%20practices%20with%20filtration%20systems&width=400&height=250&seq=news006&orientation=landscape"
-                            alt="Xử lý nước thải" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Môi
-                                    trường</span>
-                                <span class="text-sm text-gray-500">08 Tháng 12, 2024</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Hệ thống xử lý nước thải tiên tiến</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Đưa vào vận hành hệ thống xử lý nước thải hiện
-                                đại, tái sử dụng 95% nước trong quy trình sản xuất và đạt tiêu chuẩn môi trường QCVN
-                                40...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
-                                data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="technology" data-date="2024-12-05">
-                        <img src="https://readdy.ai/api/search-image?query=Digital%20transformation%20in%20mineral%20processing%20industry%2C%20IoT%20sensors%20and%20monitoring%20systems%2C%20smart%20factory%20technology%2C%20industrial%20automation%20with%20digital%20displays%20and%20control%20panels&width=400&height=250&seq=news007&orientation=landscape"
-                            alt="Chuyển đổi số" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Công
-                                    nghệ</span>
-                                <span class="text-sm text-gray-500">05 Tháng 12, 2024</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Chuyển đổi số trong sản xuất khoáng sản
-                            </h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Triển khai hệ thống IoT và Big Data để tối ưu hóa
-                                quy trình sản xuất, giảm chi phí vận hành 20% và nâng cao hiệu suất sản xuất...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
-                                data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="product" data-date="2024-12-03">
-                        <img src="https://readdy.ai/api/search-image?query=Export%20quality%20mineral%20powder%20products%20with%20international%20shipping%20containers%2C%20global%20trade%20and%20logistics%2C%20professional%20packaging%20for%20international%20markets%2C%20quality%20certification%20documents&width=400&height=250&seq=news008&orientation=landscape"
-                            alt="Xuất khẩu quốc tế" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">Sản
-                                    phẩm</span>
-                                <span class="text-sm text-gray-500">03 Tháng 12, 2024</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Mở rộng thị trường xuất khẩu sang châu
-                                Âu</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Ký kết hợp đồng xuất khẩu 5000 tấn bột TALC và
-                                CaCO3 sang thị trường châu Âu, khẳng định chất lượng sản phẩm đạt tiêu chuẩn quốc tế...
-                            </p>
-                            <a href="./chi-tiet-tin-tuc.php"
-                                data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                        data-category="environment" data-date="2024-12-01">
-                        <img src="https://readdy.ai/api/search-image?query=Solar%20energy%20installation%20at%20industrial%20mineral%20processing%20facility%2C%20renewable%20energy%20systems%2C%20green%20industrial%20development%2C%20sustainable%20power%20generation%20with%20solar%20panels%20on%20factory%20roof&width=400&height=250&seq=news009&orientation=landscape"
-                            alt="Năng lượng tái tạo" class="w-full h-48 object-cover object-top">
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">Môi
-                                    trường</span>
-                                <span class="text-sm text-gray-500">01 Tháng 12, 2024</span>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Đầu tư hệ thống năng lượng mặt trời
-                            </h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">Lắp đặt hệ thống điện mặt trời công suất 2MW,
-                                cung cấp 30% nhu cầu điện năng cho nhà máy và giảm 1500 tấn CO2 mỗi năm...</p>
-                            <a href="./chi-tiet-tin-tuc.php"
-                                data-readdy="true" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
-                        </div>
-                    </article>
+                    
+                    <?php
+                    endwhile;
+                    ?>
                 </div>
                 <div class="flex justify-center items-center mt-12 space-x-2">
                     <button

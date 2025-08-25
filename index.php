@@ -117,8 +117,6 @@ $resultnew = $conn->query($sql);
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-900 mb-2"><?php echo $row['product_name'] ?> </h3>
                             <p class="text-gray-600 mb-4"><?php echo $row['product_description'] ?></p>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2"><?php echo $row['product_name'] ?> </h3>
-                            <p class="text-gray-600 mb-4"><?php echo $row['product_description'] ?></p>
                             <button
                                 class="bg-primary hover:bg-blue-700 text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
                                <a href="./san-pham/index.php?id=<?php echo $row['product_id']?>"> Chi tiết </a>
@@ -150,14 +148,15 @@ $resultnew = $conn->query($sql);
                         <img src="<?php echo $row['news_img']; ?>"
                             alt="<?php echo $row['news_name'];?>" class="w-full h-48 object-cover object-top">
                         <div class="p-6">
-                            <div class="text-sm text-gray-500 mb-2">05 Tháng 12, 2024</div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Tiêu chuẩn chất lượng mới cho bột TALC
-                            </h3>
-                            <p class="text-gray-600 mb-4">Áp dụng các tiêu chuẩn chất lượng quốc tế mới nhằm đảm bảo sản
-                                phẩm đạt chất lượng cao nhất...</p>
-                            <a href="#" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
+                            <div class="text-sm text-gray-500 mb-2"><?php echo $row['create_time'];?></div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3"><?php echo $row['news_name'];?></h3>
+                            <p class="text-gray-600 mb-4"><?php echo $row['new_summary'];?></p>
+                            <a href="./tin-tuc/chi-tiet-tin-tuc.php?id=<?php echo $row['news_id'];?>" class="text-primary hover:text-blue-700 font-medium">Đọc thêm →</a>
                         </div>
                     </article>
+                    <?php 
+                    endwhile;
+                    ?>
                 </div>
             </div>
         </section>
