@@ -324,68 +324,66 @@
                         </div>
                         <div id="contact" class="bg-white rounded-lg shadow-lg p-6">
                             <h3 class="text-xl font-bold text-gray-900 mb-4">Form Liên Hệ Báo Giá</h3>
-                            <form class="space-y-4">
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên *</label>
-                                        <input type="text"
-                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                                            placeholder="Trần Minh Hoàng">
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-1">Công ty</label>
-                                        <input type="text"
-                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                                            placeholder="Công ty TNHH Giấy Sài Gòn">
-                                    </div>
-                                </div>
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại
-                                            *</label>
-                                        <input type="tel"
-                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                                            placeholder="0908765432">
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                                        <input type="email"
-                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                                            placeholder="hoang.tm@saigonpaper.com">
-                                    </div>
-                                </div>
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-1">Số lượng cần báo giá
-                                            (tấn) *</label>
-                                        <input type="number"
-                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                                            placeholder="15">
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-1">Ngành ứng
-                                            dụng</label>
-                                        <select
-                                            class="w-full px-3 py-2 pr-8 border border-gray-300 rounded-lg focus:outline-none focus:border-primary">
-                                            <option>Chọn ngành ứng dụng</option>
-                                            <option>Ngành giấy</option>
-                                            <option>Ngành nhựa</option>
-                                            <option>Ngành sơn</option>
-                                            <option>Khác</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-1">Yêu cầu đặc biệt</label>
-                                    <textarea rows="3"
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                                        placeholder="Yêu cầu về đóng gói big bag 1000kg, giao hàng tận nơi tại KCN Tân Bình. Cần chứng nhận chất lượng kèm theo..."></textarea>
-                                </div>
-                                <button type="submit"
-                                    class="w-full bg-primary hover:bg-blue-700 text-white py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
-                                    Gửi yêu cầu báo giá
-                                </button>
-                            </form>
+                            <form id="quoteRequest" class="space-y-4">
+    <div class="grid md:grid-cols-2 gap-4">
+        <div>
+            <label>Họ và tên *</label>
+            <input type="text" name="full_name" required
+                class="w-full px-3 py-2 border rounded-lg" placeholder="Trần Minh Hoàng">
+        </div>
+        <div>
+            <label>Công ty</label>
+            <input type="text" name="address"
+                class="w-full px-3 py-2 border rounded-lg" placeholder="Công ty TNHH Giấy Sài Gòn">
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+        <div>
+            <label>Số điện thoại *</label>
+            <input type="tel" name="phone_number" required
+                class="w-full px-3 py-2 border rounded-lg" placeholder="0908765432">
+        </div>
+        <div>
+            <label>Email *</label>
+            <input type="email" name="email" required
+                class="w-full px-3 py-2 border rounded-lg" placeholder="hoang.tm@saigonpaper.com">
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+        <div>
+            <label>Số lượng cần báo giá (tấn) *</label>
+            <input type="number" name="quoted_quantity" required
+                class="w-full px-3 py-2 border rounded-lg" placeholder="15">
+        </div>
+        <div>
+            <label>Ngành ứng dụng</label>
+            <select name="industry" class="w-full px-3 py-2 border rounded-lg">
+                <option value="">Chọn ngành ứng dụng</option>
+                <option value="Ngành giấy">Ngành giấy</option>
+                <option value="Ngành nhựa">Ngành nhựa</option>
+                <option value="Ngành sơn">Ngành sơn</option>
+                <option value="Khác">Khác</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <label>Yêu cầu đặc biệt</label>
+        <textarea name="special_request" rows="3"
+            class="w-full px-3 py-2 border rounded-lg"
+            placeholder="Đóng gói big bag 1000kg, giao tại KCN Tân Bình..."></textarea>
+    </div>
+
+    <button type="submit"
+        class="w-full bg-primary hover:bg-blue-700 text-white py-3 rounded-lg font-semibold">
+        Gửi yêu cầu báo giá
+    </button>
+</form>
+
+<div id="responseMsg" class="mt-4"></div>
+
                         </div>
                     </div>
                 </div>
@@ -507,6 +505,35 @@
             });
         });
     </script>
+    <script>
+document.getElementById("quoteRequest").addEventListener("submit", async function(e){
+    e.preventDefault(); // chặn reload
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+        let res = await fetch("../modules/quote_request.php", { // gọi trực tiếp file PHP
+            method: "POST",
+            body: formData
+        });
+
+        let text = await res.text(); // PHP trả "OK" hoặc "ERROR"
+
+        if(text.trim() === "OK"){
+            document.getElementById("responseMsg").innerHTML =
+                `<p class="text-green-600 font-semibold">✅ Gửi thành công! Cảm ơn bạn đã liên hệ.</p>`;
+            form.reset();
+        } else {
+            document.getElementById("responseMsg").innerHTML =
+                `<p class="text-red-600 font-semibold">❌ Gửi thất bại, vui lòng thử lại!</p>`;
+        }
+    } catch (err) {
+        document.getElementById("responseMsg").innerHTML =
+            `<p class="text-red-600 font-semibold">⚠️ Không thể kết nối tới server!</p>`;
+    }
+});
+</script>
 </body>
 
 </html>
