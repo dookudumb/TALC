@@ -1,26 +1,10 @@
-<?php
-include '../config/db_connection.php';
-$id=$_GET['id'];
-// var_dump($id);
-// die;
-$sql= "SELECT `news_id`,`news_name`,`news_content`,`news_img`,`news_author`,`create_time` FROM `news` WHERE news_id = '$id'";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-
-$sqlLatestNews = 'SELECT `news_id`,`news_name`,`news_img`,`create_time` FROM `news` ORDER BY news_id DESC';
-$resultLatestNews = $conn->query($sqlLatestNews);
-
-$sqlOutstanding = "SELECT `news_id`,`news_name`,`new_summary`,`news_img`,`news_author`,`create_time` FROM `news` WHERE outstanding = true";
-$resultOutstanding = $conn->query($sqlOutstanding);
-$rowOutstanding = $resultOutstanding->fetch_assoc();
-?>
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $row['news_name']; ?></title>
+    <title>Xu hướng chuyển đổi số trong doanh nghiệp Việt Nam 2024 - Logo</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config = { theme: { extend: { colors: { primary: '#3b82f6', secondary: '#1e40af' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,7 +106,7 @@ $rowOutstanding = $resultOutstanding->fetch_assoc();
             <i class="ri-arrow-right-s-line flex-shrink-0"></i>
             <a href="#" class="hover:text-primary">Tin tức</a>
             <i class="ri-arrow-right-s-line flex-shrink-0"></i>
-            <span class="text-gray-900 break-words"><?php echo $row['news_name']; ?></span>
+            <span class="text-gray-900 break-words">Xu hướng chuyển đổi số trong doanh nghiệp Việt Nam 2024</span>
         </nav> 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-4">
             <main class="lg:col-span-2">
@@ -130,16 +114,24 @@ $rowOutstanding = $resultOutstanding->fetch_assoc();
                     <div class="p-8">
                         <div class="mb-6">
                             <h1 class="text-3xl font-bold text-gray-900 mb-4 leading-tight">
-                                <?php echo $row['news_name']; ?>
+                                Xu hướng chuyển đổi số trong doanh nghiệp Việt Nam 2024: Cơ hội và thách thức
                             </h1>
                             <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
                                 <div class="flex items-center gap-2">
                                     <i class="ri-calendar-line w-4 h-4 flex items-center justify-center"></i>
-                                    <span><?php echo $row['create_time']; ?></span>
+                                    <span>15 tháng 12, 2024</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="ri-user-line w-4 h-4 flex items-center justify-center"></i>
-                                    <span><?php echo $row['news_author']; ?></span>
+                                    <span>Nguyễn Minh Hải</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-folder-line w-4 h-4 flex items-center justify-center"></i>
+                                    <span>Công nghệ</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="ri-time-line w-4 h-4 flex items-center justify-center"></i>
+                                    <span>8 phút đọc</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4">
@@ -165,56 +157,177 @@ $rowOutstanding = $resultOutstanding->fetch_assoc();
                             </div>
                         </div>
                         <div class="mb-8">
-                            <img src="<?php echo $row['news_img']; ?>"
+                            <img src="https://readdy.ai/api/search-image?query=Modern%20Vietnamese%20business%20office%20with%20digital%20transformation%20technology%2C%20employees%20working%20with%20laptops%20and%20digital%20screens%2C%20clean%20bright%20environment%20with%20glass%20walls%20and%20modern%20furniture%2C%20professional%20atmosphere%2C%20high-tech%20workspace%20with%20data%20visualization%20displays%20and%20cloud%20computing%20symbols%2C%20natural%20lighting%2C%20contemporary%20corporate%20setting&width=800&height=450&seq=news001&orientation=landscape"
                                 alt="Chuyển đổi số trong doanh nghiệp"
                                 class="w-full h-96 object-cover object-top rounded-lg">
-                            <p class="text-sm text-gray-600 mt-2 italic"><?php echo $row['news_name']; ?></p>
+                            <p class="text-sm text-gray-600 mt-2 italic">Doanh nghiệp Việt Nam đang tích cực triển khai
+                                các giải pháp chuyển đổi số</p>
                         </div>
                         <div class="article-content text-gray-700 leading-relaxed">
-                            <p><?php echo $row['news_content']; ?></p>
+                            <p class="text-lg text-gray-800 font-medium mb-6">
+                                Trong bối cảnh cuộc cách mạng công nghiệp 4.0 đang diễn ra mạnh mẽ, chuyển đổi số đã trở
+                                thành xu hướng tất yếu và là yếu tố quyết định sự tồn tại, phát triển của các doanh
+                                nghiệp Việt Nam.
+                            </p>
+                            <h2>Thực trạng chuyển đổi số tại Việt Nam</h2>
+                            <p>
+                                Theo báo cáo mới nhất từ Bộ Thông tin và Truyền thông, tỷ lệ doanh nghiệp Việt Nam áp
+                                dụng các giải pháp chuyển đổi số đã tăng từ 32% năm 2022 lên 47% năm 2024. Đây là một
+                                bước tiến đáng kể, cho thấy sự nhận thức ngày càng cao của cộng đồng doanh nghiệp về tầm
+                                quan trọng của công nghệ số.
+                            </p>
+                            <div class="my-8">
+                                <img src="https://readdy.ai/api/search-image?query=Vietnamese%20business%20professionals%20analyzing%20digital%20data%20on%20large%20monitors%2C%20modern%20conference%20room%20with%20charts%20and%20graphs%20displayed%20on%20screens%2C%20team%20collaboration%20with%20tablets%20and%20laptops%2C%20professional%20meeting%20environment%20with%20data%20visualization%2C%20clean%20corporate%20interior%20design&width=800&height=400&seq=news002&orientation=landscape"
+                                    alt="Phân tích dữ liệu số" class="w-full h-64 object-cover object-top rounded-lg">
+                            </div>
+                            <blockquote>
+                                "Chuyển đổi số không chỉ là việc áp dụng công nghệ, mà là sự thay đổi toàn diện trong tư
+                                duy, văn hóa và cách thức hoạt động của doanh nghiệp" - Ông Trần Văn Minh, Chuyên gia tư
+                                vấn chuyển đổi số
+                            </blockquote>
+                            <h2>Các xu hướng chuyển đổi số nổi bật</h2>
+                            <h3>1. Tự động hóa quy trình kinh doanh</h3>
+                            <p>
+                                Việc áp dụng các công cụ tự động hóa như RPA (Robotic Process Automation) đang giúp các
+                                doanh nghiệp giảm thiểu thời gian xử lý, nâng cao độ chính xác và tiết kiệm chi phí vận
+                                hành. Các ngành như ngân hàng, bảo hiểm và logistics đang dẫn đầu trong việc triển khai
+                                các giải pháp này.
+                            </p>
+                            <h3>2. Ứng dụng trí tuệ nhân tạo và học máy</h3>
+                            <p>
+                                AI và Machine Learning đang được ứng dụng rộng rãi trong việc phân tích dữ liệu khách
+                                hàng, dự đoán xu hướng thị trường và tối ưu hóa chuỗi cung ứng. Điều này giúp doanh
+                                nghiệp đưa ra các quyết định kinh doanh chính xác và kịp thời hơn.
+                            </p>
+                            <h3>3. Chuyển đổi sang điện toán đám mây</h3>
+                            <p>
+                                Cloud Computing đang trở thành lựa chọn ưu tiên của nhiều doanh nghiệp nhờ khả năng mở
+                                rộng linh hoạt, tiết kiệm chi phí và đảm bảo tính bảo mật cao. Đặc biệt, sau đại dịch
+                                COVID-19, nhu cầu làm việc từ xa đã thúc đẩy việc áp dụng các giải pháp đám mây.
+                            </p>
+                            <div class="my-8">
+                                <img src="https://readdy.ai/api/search-image?query=Modern%20Vietnamese%20office%20with%20cloud%20computing%20infrastructure%2C%20servers%20and%20network%20equipment%2C%20IT%20professionals%20working%20with%20cloud%20technology%2C%20digital%20transformation%20setup%20with%20multiple%20screens%20showing%20cloud%20services%2C%20professional%20technology%20environment&width=800&height=400&seq=news003&orientation=landscape"
+                                    alt="Điện toán đám mây" class="w-full h-64 object-cover object-top rounded-lg">
+                            </div>
+                            <h2>Cơ hội từ chuyển đổi số</h2>
+                            <p>
+                                Chuyển đổi số mang lại nhiều cơ hội to lớn cho doanh nghiệp Việt Nam. Đầu tiên là khả
+                                năng tiếp cận thị trường rộng lớn hơn thông qua các nền tảng số và thương mại điện tử.
+                                Thứ hai, việc số hóa quy trình giúp tăng hiệu quả hoạt động và giảm chi phí vận hành
+                                đáng kể.
+                            </p>
+                            <p>
+                                Bên cạnh đó, dữ liệu số hóa cho phép doanh nghiệp hiểu rõ hơn về khách hàng, từ đó cung
+                                cấp sản phẩm và dịch vụ phù hợp hơn. Điều này không chỉ nâng cao trải nghiệm khách hàng
+                                mà còn tạo ra lợi thế cạnh tranh bền vững.
+                            </p>
+                            <h2>Thách thức cần vượt qua</h2>
+                            <p>
+                                Mặc dù có nhiều cơ hội, các doanh nghiệp Việt Nam vẫn đối mặt với không ít thách thức
+                                trong quá trình chuyển đổi số. Thách thức lớn nhất là thiếu nguồn nhân lực có kỹ năng
+                                công nghệ cao và kinh nghiệm triển khai các dự án chuyển đổi số.
+                            </p>
+                            <p>
+                                Ngoài ra, vấn đề bảo mật thông tin và an ninh mạng cũng là mối quan tâm hàng đầu. Nhiều
+                                doanh nghiệp còn e ngại việc chuyển đổi do lo sợ rủi ro về bảo mật dữ liệu và tấn công
+                                mạng.
+                            </p>
+                            <blockquote>
+                                Theo khảo sát của Vietnam Digital Transformation Association, 68% doanh nghiệp cho rằng
+                                thiếu nhân lực chất lượng cao là rào cản lớn nhất trong quá trình chuyển đổi số.
+                            </blockquote>
+                            <h2>Khuyến nghị cho doanh nghiệp</h2>
+                            <p>
+                                Để thành công trong chuyển đổi số, các doanh nghiệp cần xây dựng chiến lược rõ ràng và
+                                lộ trình triển khai phù hợp. Việc đầu tư vào đào tạo nhân lực và xây dựng văn hóa số
+                                trong tổ chức là yếu tố then chốt.
+                            </p>
+                            <p>
+                                Đồng thời, doanh nghiệp nên bắt đầu từ những bước nhỏ, triển khai từng giai đoạn thay vì
+                                cố gắng thay đổi toàn bộ hệ thống cùng một lúc. Việc hợp tác với các đối tác công nghệ
+                                uy tín cũng sẽ giúp giảm thiểu rủi ro và tăng tỷ lệ thành công.
+                            </p>
                         </div>
-                        
+                        <div class="border-t border-gray-200 pt-8 mt-8">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <button
+                                        class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap">
+                                        <i class="ri-heart-line w-4 h-4 flex items-center justify-center"></i>
+                                        <span>Thích bài viết</span>
+                                        <span class="bg-blue-600 px-2 py-1 rounded-full text-xs">24</span>
+                                    </button>
+                                    <div class="flex items-center gap-2 text-gray-600">
+                                        <i class="ri-eye-line w-4 h-4 flex items-center justify-center"></i>
+                                        <span>1,247 lượt xem</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
             </main>
             <aside class="lg:col-span-1">
                 <div class="sticky top-24 space-y-6">
                     <div class="bg-white rounded-lg shadow-sm p-6">
-                        <h3 class="text-lg font-semibold mb-4">Bài viết mới cập nhật</h3>
+                        <h3 class="text-lg font-semibold mb-4">Bài viết liên quan</h3>
                         <div class="space-y-4">
-                    <?php
-                    while ($rowLatestNews = $resultLatestNews->fetch_assoc()):
-                    ?>
-                        <article class="flex gap-4">
+                            <article class="flex gap-4">
                                 <img src="https://readdy.ai/api/search-image?query=Vietnamese%20startup%20office%20with%20young%20entrepreneurs%20working%20on%20laptops%2C%20modern%20coworking%20space%20with%20creative%20atmosphere%2C%20innovative%20technology%20workspace%20with%20bright%20lighting%20and%20contemporary%20furniture&width=100&height=80&seq=related001&orientation=landscape"
                                     alt="Startup Việt Nam"
                                     class="w-20 h-16 object-cover object-top rounded-lg flex-shrink-0">
                                 <div>
                                     <h4 class="font-medium text-sm leading-tight mb-1">
-                                        <a href="../tin-tuc/chi-tiet-tin-tuc.php?id=<?php echo $rowLatestNews['news_id']; ?>" class="hover:text-primary"><?php echo $rowLatestNews['news_name'];?></a>
+                                        <a href="#" class="hover:text-primary">Startup Việt Nam và hành trình chinh phục
+                                            thị trường quốc tế</a>
                                     </h4>
-                                    <p class="text-xs text-gray-600"><?php echo $rowLatestNews['create_time']; ?></p>
+                                    <p class="text-xs text-gray-600">12 tháng 12, 2024</p>
                                 </div>
                             </article>
-                    <?php
-                    endwhile;
-                    ?>
+                            <article class="flex gap-4">
+                                <img src="https://readdy.ai/api/search-image?query=Vietnamese%20e-commerce%20warehouse%20with%20automated%20systems%2C%20modern%20logistics%20center%20with%20conveyor%20belts%20and%20robotic%20equipment%2C%20efficient%20supply%20chain%20management%20facility%20with%20clean%20industrial%20design&width=100&height=80&seq=related002&orientation=landscape"
+                                    alt="Thương mại điện tử"
+                                    class="w-20 h-16 object-cover object-top rounded-lg flex-shrink-0">
+                                <div>
+                                    <h4 class="font-medium text-sm leading-tight mb-1">
+                                        <a href="#" class="hover:text-primary">Thương mại điện tử Việt Nam: Cơ hội từ
+                                            ASEAN Digital Economy</a>
+                                    </h4>
+                                    <p class="text-xs text-gray-600">10 tháng 12, 2024</p>
+                                </div>
+                            </article>
+                            <article class="flex gap-4">
+                                <img src="https://readdy.ai/api/search-image?query=Vietnamese%20fintech%20office%20with%20financial%20technology%20professionals%2C%20modern%20banking%20technology%20workspace%20with%20multiple%20screens%20showing%20financial%20data%2C%20clean%20professional%20environment%20with%20digital%20payment%20systems&width=100&height=80&seq=related003&orientation=landscape"
+                                    alt="Fintech Việt Nam"
+                                    class="w-20 h-16 object-cover object-top rounded-lg flex-shrink-0">
+                                <div>
+                                    <h4 class="font-medium text-sm leading-tight mb-1">
+                                        <a href="#" class="hover:text-primary">Fintech Việt Nam: Xu hướng thanh toán
+                                            không tiền mặt</a>
+                                    </h4>
+                                    <p class="text-xs text-gray-600">8 tháng 12, 2024</p>
+                                </div>
+                            </article>
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-sm p-6">
                         <h3 class="text-lg font-semibold mb-4">Bài viết nổi bật</h3>
                         <div class="space-y-4">
                             <article>
-                                <img src="<?php echo $rowOutstanding['news_img'];?>"
+                                <img src="https://readdy.ai/api/search-image?query=Vietnamese%20smart%20city%20infrastructure%20with%20modern%20buildings%20and%20digital%20technology%20integration%2C%20urban%20landscape%20with%20IoT%20sensors%20and%20smart%20traffic%20systems%2C%20futuristic%20cityscape%20with%20clean%20architecture%20and%20green%20spaces&width=300&height=200&seq=featured001&orientation=landscape"
                                     alt="Thành phố thông minh"
                                     class="w-full h-32 object-cover object-top rounded-lg mb-3">
                                 <h4 class="font-medium mb-2">
-                                    <a href="#" class="hover:text-primary"><?php echo $rowOutstanding['news_name'];?></a>
+                                    <a href="#" class="hover:text-primary">Thành phố thông minh: Tương lai của đô thị
+                                        Việt Nam</a>
                                 </h4>
-                                <p class="text-sm text-gray-600 mb-2"><?php echo $rowOutstanding['new_summary'];?></p>
+                                <p class="text-sm text-gray-600 mb-2">Khám phá các dự án thành phố thông minh đang được
+                                    triển khai tại Việt Nam...</p>
                                 <div class="flex items-center gap-2 text-xs text-gray-500">
-                                    <i class="ri-user-line w-4 h-4 flex items-center justify-center"></i>
-                                    <span><?php echo $rowOutstanding['news_author'];?></span>
+                                    <i class="ri-eye-line w-3 h-3 flex items-center justify-center"></i>
+                                    <span>2,156 lượt xem</span>
                                 </div>
                             </article>
                         </div>

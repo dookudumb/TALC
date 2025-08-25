@@ -156,12 +156,12 @@
                             bạn trong thời gian sớm nhất</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <form class="space-y-6">
+                        <form id="contactForm" method="POST" class="space-y-6">
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Họ và tên
                                         *</label>
-                                    <input type="text" id="fullName" name="fullName" required
+                                    <input type="text" id="fullName" name="name" required
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-sm">
                                 </div>
                                 <div>
@@ -205,13 +205,6 @@
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-sm resize-none"
                                     placeholder="Vui lòng mô tả chi tiết yêu cầu của bạn..."></textarea>
                             </div>
-                            <div class="flex items-start">
-                                <input type="checkbox" id="agreement" name="agreement" required
-                                    class="mt-1 mr-3 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
-                                <label for="agreement" class="text-sm text-gray-600">Tôi đồng ý với <a href="#"
-                                        class="text-primary hover:underline">chính sách bảo mật</a> và cho phép công ty
-                                    liên hệ lại với tôi.</label>
-                            </div>
                             <div class="text-center">
                                 <button type="submit"
                                     class="bg-primary hover:bg-blue-700 text-white px-8 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
@@ -219,6 +212,8 @@
                                 </button>
                             </div>
                         </form>
+                        <!-- Chỗ hiển thị kết quả -->
+<div id="responseMsg" class="mt-4 text-center"></div>
                     </div>
                 </div>
             </div>
@@ -268,8 +263,37 @@
     include ("../includes/footer_child.php");
     include ("../includes/cta.php");
    ?>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+    e.preventDefault(); // chặn reload
 
-    <script id="form-validation">
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+        let res = await fetch("../modules/save_contact.php", { // gọi trực tiếp file PHP
+            method: "POST",
+            body: formData
+        });
+
+        let text = await res.text(); // PHP trả "OK" hoặc "ERROR"
+
+        if(text.trim() === "OK"){
+            document.getElementById("responseMsg").innerHTML =
+                `<p class="text-green-600 font-semibold">✅ Gửi thành công! Cảm ơn bạn đã liên hệ.</p>`;
+            form.reset();
+        } else {
+            document.getElementById("responseMsg").innerHTML =
+                `<p class="text-red-600 font-semibold">❌ Gửi thất bại, vui lòng thử lại!</p>`;
+        }
+    } catch (err) {
+        document.getElementById("responseMsg").innerHTML =
+            `<p class="text-red-600 font-semibold">⚠️ Không thể kết nối tới server!</p>`;
+    }
+});
+</script>
+
+    <!-- <script id="form-validation">
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('form');
             const checkbox = document.getElementById('agreement');
@@ -283,8 +307,8 @@
                 form.reset();
             });
         });
-    </script>
-
+    </script> -->
+        
 </body>
 
 </html>
