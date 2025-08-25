@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu - Công ty TNHH Khoáng Sản Việt</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white">
+    <?php   
+    $current_page = "Giới thiệu";
+    include ("../includes/header_child.php");
+    ?>
+    <main class="pt-16">
+        <section class="relative h-96 flex items-center justify-center overflow-hidden"
+            style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20industrial%20mineral%20processing%20company%20headquarters%20building%20with%20modern%20architecture%2C%20clean%20corporate%20environment%2C%20blue%20sky%20background%2C%20wide%20angle%20view%2C%20professional%20corporate%20photography%20showing%20scale%20and%20success&width=1920&height=600&seq=about-hero&orientation=landscape'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+                <h1 class="text-5xl font-bold mb-4">Về Chúng Tôi</h1>
+                <p class="text-xl opacity-90">Hành trình 15 năm xây dựng và phát triển trong ngành khoáng sản</p>
+            </div>
+        </section>
+        <section class="py-4 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center text-sm text-gray-600">
+                    <a href="../index.php"
+                        data-readdy="true" class="hover:text-primary">Trang chủ</a>
+                    <div class="w-4 h-4 flex items-center justify-center mx-2">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                    <span class="text-primary">Giới thiệu</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Công ty Cổ phần Khoáng sản Công nghiệp Miền
+                            Bắc</h2>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            Công ty Cổ phần Khoáng sản Công nghiệp Miền Bắc là doanh nghiệp hàng đầu trong lĩnh vực khai
+                            thác, chế biến và kinh doanh khoáng sản công nghiệp tại khu vực phía Bắc Việt Nam. Với hơn
+                            15 năm kinh nghiệm, chúng tôi tự hào là đối tác tin cậy cung cấp các sản phẩm bột đá, bột
+                            TALC chất lượng cao cho các ngành công nghiệp sơn, nhựa, giấy và vật liệu xây dựng.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Công nghệ hiện đại</h3>
+                                    <p class="text-gray-600">Sở hữu dây chuyền sản xuất tự động từ các thương hiệu hàng
+                                        đầu thế giới</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Đội ngũ chuyên nghiệp</h3>
+                                    <p class="text-gray-600">Hơn 200 kỹ sư và chuyên gia có kinh nghiệm trong ngành</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mt-1 mr-4">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Chất lượng đảm bảo</h3>
+                                    <p class="text-gray-600">Sản phẩm đạt tiêu chuẩn ISO 9001:2015 và các chứng nhận
+                                        quốc tế</p>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="flex space-x-4">
+                            <a href="../lien-he/index.php"
+                            class="bg-primary text-white hover:bg-blue-700 px-6 py-3 font-semibold !rounded-button transition-colors whitespace-nowrap">
+                                Liên hệ ngay
+                            </a>
+                            <a href="#"
+                            class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 font-semibold !rounded-button transition-colors whitespace-nowrap">
+                                Tải catalogue
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20industrial%20mineral%20processing%20facility%20exterior%20with%20clean%20architecture%2C%20professional%20corporate%20building%20with%20glass%20facade%2C%20daytime%20with%20beautiful%20landscaping%2C%20high-end%20business%20environment&width=600&height=400&seq=company001&orientation=landscape"
+                            alt="Trụ sở công ty" class="w-full rounded-lg shadow-lg">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://readdy.ai/api/search-image?query=Advanced%20mineral%20processing%20laboratory%20with%20modern%20testing%20equipment%2C%20scientists%20working%2C%20clean%20professional%20environment%2C%20quality%20control%20processes&width=300&height=200&seq=company002&orientation=landscape"
+                                alt="Phòng thí nghiệm" class="w-full rounded-lg shadow-lg">
+                            <img src="https://readdy.ai/api/search-image?query=Modern%20automated%20production%20line%20for%20mineral%20processing%2C%20industrial%20machinery%20in%20operation%2C%20workers%20in%20safety%20equipment%2C%20clean%20factory%20environment&width=300&height=200&seq=company003&orientation=landscape"
+                                alt="Dây chuyền sản xuất" class="w-full rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Lịch Sử Hình Thành</h2>
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
+                                    2009
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Thành lập công ty</h3>
+                                    <p class="text-gray-600">Khởi đầu với quy mô nhỏ, chuyên khai thác và chế biến đá
+                                        vôi tại mỏ Hòa Bình</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
+                                    2012
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mở rộng sản xuất</h3>
+                                    <p class="text-gray-600">Đầu tư dây chuyền sản xuất bột TALC hiện đại, nâng công
+                                        suất lên 5.000 tấn/năm</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
+                                    2016
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Chứng nhận ISO</h3>
+                                    <p class="text-gray-600">Đạt chứng nhận ISO 9001:2015, khẳng định chất lượng sản
+                                        phẩm đạt tiêu chuẩn quốc tế</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
+                                    2020
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Xuất khẩu quốc tế</h3>
+                                    <p class="text-gray-600">Mở rộng thị trường xuất khẩu sang Thái Lan, Malaysia và các
+                                        nước ASEAN</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-6">
+                                    2024
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Hiện tại</h3>
+                                    <p class="text-gray-600">Trở thành nhà cung cấp hàng đầu với công suất 20.000
+                                        tấn/năm, phục vụ hơn 200 khách hàng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Tầm Nhìn & Sứ Mệnh</h2>
+                        <div class="bg-gray-50 rounded-lg p-8 mb-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 flex items-center justify-center bg-primary rounded mr-3">
+                                    <i class="ri-eye-line text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900">Tầm Nhìn</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">Trở thành công ty hàng đầu Việt Nam trong lĩnh vực
+                                sản xuất và cung cấp bột khoáng chất lượng cao, đáp ứng nhu cầu của các ngành công
+                                nghiệp hiện đại và góp phần phát triển kinh tế bền vững.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-8 mb-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 flex items-center justify-center bg-primary rounded mr-3">
+                                    <i class="ri-flag-line text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900">Sứ Mệnh</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">Cung cấp các sản phẩm bột khoáng chất lượng cao với
+                                giá cả cạnh tranh, dịch vụ chuyên nghiệp, góp phần nâng cao chất lượng sản phẩm của
+                                khách hàng và phát triển ngành công nghiệp Việt Nam.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 flex items-center justify-center bg-primary rounded mr-3">
+                                    <i class="ri-heart-line text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900">Giá Trị Cốt Lõi</h3>
+                            </div>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                                    Chất lượng là ưu tiên hàng đầu
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                                    Đổi mới và cải tiến liên tục
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                                    Phát triển bền vững và thân thiện môi trường
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                                    Tận tâm phục vụ khách hàng
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Sơ Đồ Tổ Chức</h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Cơ cấu tổ chức của công ty được xây dựng theo mô
+                        hình quản lý hiện đại, chuyên nghiệp</p>
+                </div>
+                <div class="max-w-5xl mx-auto">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <div class="flex flex-col items-center mb-12">
+                            <div class="w-64 bg-primary text-white p-4 rounded-lg text-center mb-4">
+                                <h3 class="text-lg font-semibold">Hội Đồng Quản Trị</h3>    
+                                <p class="text-sm opacity-90">Chủ tịch: Ông Trần Đức Nam</p>
+                            </div>
+                            <div class="w-0.5 h-8 bg-gray-300"></div>
+                        </div>
+                        <div class="flex flex-col items-center mb-12">
+                            <div class="w-64 bg-primary text-white p-4 rounded-lg text-center mb-4">
+                                <h3 class="text-lg font-semibold">Ban Tổng Giám Đốc</h3>
+                                <p class="text-sm opacity-90">TGĐ: Ông Nguyễn Văn Minh</p>
+                            </div>
+                            <div class="w-0.5 h-8 bg-gray-300"></div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-8 mb-12">
+                            <div class="flex flex-col items-center">
+                                <div class="w-full bg-blue-600 text-white p-4 rounded-lg text-center mb-4">
+                                    <h3 class="text-lg font-semibold">Khối Sản Xuất</h3>
+                                    <p class="text-sm opacity-90">Giám đốc: Ông Lê Đức Thắng</p>
+                                </div>
+                                <div class="w-0.5 h-8 bg-gray-300"></div>
+                                <div class="grid grid-cols-1 gap-4 w-full">
+                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
+                                        <p class="font-medium text-blue-900">Nhà máy Hòa Bình</p>
+                                    </div>
+                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
+                                        <p class="font-medium text-blue-900">Nhà máy Thái Nguyên</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-full bg-blue-600 text-white p-4 rounded-lg text-center mb-4">
+                                    <h3 class="text-lg font-semibold">Khối Kinh Doanh</h3>
+                                    <p class="text-sm opacity-90">Giám đốc: Bà Trần Thị Lan</p>
+                                </div>
+                                <div class="w-0.5 h-8 bg-gray-300"></div>
+                                <div class="grid grid-cols-1 gap-4 w-full">
+                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
+                                        <p class="font-medium text-blue-900">Chi nhánh Hà Nội</p>
+                                    </div>
+                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
+                                        <p class="font-medium text-blue-900">Chi nhánh TP.HCM</p>
+                                    </div>
+                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
+                                        <p class="font-medium text-blue-900">Chi nhánh Đà Nẵng</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-full bg-blue-600 text-white p-4 rounded-lg text-center mb-4">
+                                    <h3 class="text-lg font-semibold">Khối Hỗ Trợ</h3>
+                                    <p class="text-sm opacity-90">Giám đốc: Ông Phạm Văn Hùng</p>
+                                </div>
+                                <div class="w-0.5 h-8 bg-gray-300"></div>
+                                <div class="grid grid-cols-1 gap-4 w-full">
+                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
+                                        <p class="font-medium text-blue-900">Phòng Tài chính - Kế toán</p>
+                                    </div>
+                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
+                                        <p class="font-medium text-blue-900">Phòng Nhân sự - Hành chính</p>
+                                    </div>
+                                    <div class="bg-blue-100 p-3 rounded text-center text-sm">
+                                        <p class="font-medium text-blue-900">Phòng R&D</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Quy Trình Sản Xuất</h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Quy trình sản xuất hiện đại với 6 bước chính đảm
+                        bảo chất lượng sản phẩm cao nhất</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 transform -translate-y-1/2"></div>
+                    <div class="grid grid-cols-2 lg:grid-cols-6 gap-8 relative z-10">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                                <i class="ri-hammer-line"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Khai Thác</h3>
+                            <p class="text-gray-600 text-sm">Khai thác nguyên liệu từ mỏ với công nghệ hiện đại</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                                <i class="ri-sort-desc"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Phân Loại</h3>
+                            <p class="text-gray-600 text-sm">Phân loại và sàng lọc nguyên liệu theo tiêu chuẩn</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                                <i class="ri-settings-3-line"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Nghiền Tinh</h3>
+                            <p class="text-gray-600 text-sm">Nghiền tinh với độ mịn theo yêu cầu kỹ thuật</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                                <i class="ri-search-eye-line"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Kiểm Tra</h3>
+                            <p class="text-gray-600 text-sm">Kiểm tra chất lượng trong phòng lab hiện đại</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                                <i class="ri-archive-line"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Đóng Gói</h3>
+                            <p class="text-gray-600 text-sm">Đóng gói sản phẩm theo tiêu chuẩn xuất khẩu</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                                <i class="ri-truck-line"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Vận Chuyển</h3>
+                            <p class="text-gray-600 text-sm">Giao hàng nhanh chóng và đảm bảo chất lượng</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16 grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20mineral%20processing%20factory%20production%20line%20with%20advanced%20machinery%2C%20workers%20in%20safety%20equipment%2C%20clean%20industrial%20environment%2C%20quality%20control%20processes%2C%20professional%20industrial%20photography&width=600&height=400&seq=process001&orientation=landscape"
+                            alt="Dây chuyền sản xuất" class="rounded-lg shadow-lg w-full object-cover object-top">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Công Nghệ Hiện Đại</h3>
+                        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                            Chúng tôi đầu tư vào công nghệ sản xuất tiên tiến từ Đức và Nhật Bản, đảm bảo sản phẩm đạt
+                            độ mịn và độ trắng cao nhất.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-6 h-6 flex items-center justify-center bg-green-100 rounded mr-3">
+                                    <i class="ri-check-line text-green-600"></i>
+                                </div>
+                                <span class="text-gray-700">Hệ thống nghiền Raymond Mill công suất lớn</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-6 h-6 flex items-center justify-center bg-green-100 rounded mr-3">
+                                    <i class="ri-check-line text-green-600"></i>
+                                </div>
+                                <span class="text-gray-700">Phòng lab kiểm tra chất lượng đạt chuẩn ISO</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-6 h-6 flex items-center justify-center bg-green-100 rounded mr-3">
+                                    <i class="ri-check-line text-green-600"></i>
+                                </div>
+                                <span class="text-gray-700">Hệ thống đóng gói tự động hiện đại</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Chứng Nhận & Thành Tựu</h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Những chứng nhận uy tín và thành tựu đáng tự hào
+                        trong suốt hành trình phát triển</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mx-auto mb-4">
+                            <i class="ri-award-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">ISO 9001:2015</h3>
+                        <p class="text-gray-600 text-sm">Chứng nhận hệ thống quản lý chất lượng quốc tế</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
+                            <i class="ri-leaf-line text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">ISO 14001:2015</h3>
+                        <p class="text-gray-600 text-sm">Chứng nhận hệ thống quản lý môi trường</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-yellow-100 rounded-full mx-auto mb-4">
+                            <i class="ri-shield-check-line text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">OHSAS 18001</h3>
+                        <p class="text-gray-600 text-sm">Chứng nhận an toàn và sức khỏe nghề nghiệp</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-purple-100 rounded-full mx-auto mb-4">
+                            <i class="ri-star-line text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Sao Vàng Đất Việt</h3>
+                        <p class="text-gray-600 text-sm">Giải thưởng doanh nghiệp tiêu biểu năm 2023</p>
+                    </div>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">20,000+</div>
+                        <p class="text-gray-600">Tấn sản phẩm/năm</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">200+</div>
+                        <p class="text-gray-600">Khách hàng tin tưởng</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">15+</div>
+                        <p class="text-gray-600">Năm kinh nghiệm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Hình Ảnh Công Ty</h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Một số hình ảnh về cơ sở vật chất và hoạt động
+                        sản xuất của công ty</p>
+                </div>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20mineral%20processing%20factory%20exterior%20with%20clean%20industrial%20architecture%2C%20professional%20facility%20photography%20showing%20scale%20and%20modern%20design%2C%20daytime%20with%20blue%20sky&width=400&height=400&seq=factory001&orientation=squarish"
+                            alt="Nhà máy"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Advanced%20mineral%20processing%20equipment%20and%20machinery%20in%20operation%2C%20clean%20industrial%20environment%2C%20workers%20in%20safety%20gear%2C%20quality%20control%20processes&width=400&height=400&seq=factory002&orientation=squarish"
+                            alt="Dây chuyền sản xuất"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20laboratory%20with%20advanced%20testing%20equipment%2C%20technicians%20analyzing%20mineral%20samples%2C%20clean%20scientific%20environment%2C%20professional%20lab%20photography&width=400&height=400&seq=factory003&orientation=squarish"
+                            alt="Phòng thí nghiệm"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Warehouse%20storage%20of%20mineral%20products%2C%20well-organized%20industrial%20storage%20facility%2C%20workers%20managing%20inventory%2C%20clean%20environment&width=400&height=400&seq=factory004&orientation=squarish"
+                            alt="Kho bãi"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Professional%20meeting%20room%20with%20modern%20design%2C%20business%20team%20discussing%20projects%2C%20corporate%20environment%20showing%20success%20and%20professionalism&width=400&height=400&seq=factory005&orientation=squarish"
+                            alt="Phòng họp"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Quality%20control%20process%20of%20mineral%20products%2C%20close-up%20of%20testing%20procedures%2C%20professional%20industrial%20photography%20showing%20attention%20to%20detail&width=400&height=400&seq=factory006&orientation=squarish"
+                            alt="Kiểm tra chất lượng"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Automated%20packaging%20line%20for%20mineral%20products%2C%20modern%20machinery%20in%20operation%2C%20clean%20industrial%20environment%2C%20professional%20photography&width=400&height=400&seq=factory007&orientation=squarish"
+                            alt="Đóng gói"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Transportation%20fleet%20for%20mineral%20products%20delivery%2C%20modern%20trucks%20with%20company%20branding%2C%20professional%20logistics%20photography&width=400&height=400&seq=factory008&orientation=squarish"
+                            alt="Vận chuyển"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-lg">
+                        <img src="https://readdy.ai/api/search-image?query=Aerial%20view%20of%20mineral%20processing%20facility%2C%20modern%20industrial%20complex%20with%20well-organized%20layout%2C%20professional%20drone%20photography&width=400&height=400&seq=factory009&orientation=squarish"
+                            alt="Toàn cảnh"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-primary text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Cam Kết Chất Lượng</h2>
+                    <p class="text-xl opacity-90 max-w-2xl mx-auto">Chúng tôi cam kết mang đến cho khách hàng những sản
+                        phẩm và dịch vụ tốt nhất</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
+                            <i class="ri-shield-check-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Chất Lượng Đảm Bảo</h3>
+                        <p class="opacity-90">100% sản phẩm được kiểm tra chất lượng trước khi xuất xưởng</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
+                            <i class="ri-time-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Giao Hàng Đúng Hẹn</h3>
+                        <p class="opacity-90">Cam kết giao hàng đúng thời gian đã thỏa thuận với khách hàng</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
+                            <i class="ri-customer-service-2-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Hỗ Trợ 24/7</h3>
+                        <p class="opacity-90">Đội ngũ kỹ thuật sẵn sàng hỗ trợ khách hàng mọi lúc mọi nơi</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
+                            <i class="ri-price-tag-3-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Giá Cả Cạnh Tranh</h3>
+                        <p class="opacity-90">Mức giá hợp lý nhất thị trường với chất lượng vượt trội</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
+                            <i class="ri-refresh-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Đổi Trả Linh Hoạt</h3>
+                        <p class="opacity-90">Chính sách đổi trả linh hoạt nếu sản phẩm không đạt yêu cầu</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
+                            <i class="ri-leaf-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Thân Thiện Môi Trường</h3>
+                        <p class="opacity-90">Quy trình sản xuất xanh, bảo vệ môi trường và phát triển bền vững</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button
+                        class="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold !rounded-button transition-colors whitespace-nowrap">
+                        Liên hệ tư vấn
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <?php
+    include ("../includes/footer_child.php");
+    include ("../includes/cta.php");
+   ?>
+    
+</body>
+
+</html>

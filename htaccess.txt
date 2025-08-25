@@ -1,0 +1,101 @@
+# Bật Rewrite Engine
+RewriteEngine On
+RewriteBase /
+
+# ------------------------------
+# 1️⃣ ẨN QUERY STRING VÀ VIẾT LẠI URL
+# ------------------------------
+
+# Ẩn query string ?slug= và thay bằng /websites/{slug}
+RewriteCond %{QUERY_STRING} ^slug=([a-zA-Z0-9_-]+)$
+RewriteRule ^trade/$ /trade/%1? [L,R=301]
+
+# Chuyển từ /websites/{slug} -> /websites/index.php?slug={slug}
+RewriteRule ^trade/([a-zA-Z0-9_-]+)/?$ trade/index.php?slug=$1 [L,QSA]
+RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
+
+# Chuyển từ /xem-giao-dien/{id} -> /xem-giao-dien/index.php?id={id}
+RewriteRule ^detail_news/$ /detail_news/%1? [L,R=301]
+RewriteRule ^detail_news/([a-zA-Z0-9_-]+)/?$ detail_news/index.php?slug=$1 [L,QSA]
+
+# ------------------------------
+# 2️⃣ CHUẨN HÓA URL
+# ------------------------------
+
+# Chuyển từ www sang không www
+RewriteCond %{HTTP_HOST} ^www\.vtfxtrading\.co$ [NC]
+RewriteRule ^(.*)$ http://vtfxtrading.co/$1 [R=301,L]
+
+# Loại bỏ đuôi .php và .html khỏi URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Chuyển hướng URL có đuôi .php/.html sang URL không có đuôi
+RewriteCond %{THE_REQUEST} \s/([^\s]+)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/([^\s]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Chuyển /index hoặc /index.php, /index.html sang /
+RewriteCond %{THE_REQUEST} /index(\.php|\.html)? [NC]
+RewriteRule ^(.*)index(\.php|\.html)?$ /$1 [R=301,L]
+
+# ------------------------------
+# 3️⃣ BẢO MẬT & CHẶN BOTS XẤU
+# ------------------------------
+
+# Chặn HTTrack (công cụ tải web trái phép)
+RewriteCond %{HTTP_USER_AGENT} HTTrack [NC]
+RewriteRule ^ - [F,L]
+
+# Chặn truy cập trực tiếp vào serviceContact.php
+RewriteCond %{REQUEST_URI} ^/lien-he/services/serviceContact\.php$ [NC]
+RewriteRule .* - [L]
+
+# Ẩn dấu vết PHP
+Header unset X-Powered-By
+php_value display_errors Off
+php_value error_reporting 0
+
+# ------------------------------
+# 4️⃣ CẢI THIỆN HIỆU SUẤT (TỐI ƯU CACHE & NÉN FILES)
+# ------------------------------
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE application/xhtml+xml application/xml
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ------------------------------
+# 5️⃣ XỬ LÝ LỖI 404 & CHỈNH DIRECTORY INDEX
+# ------------------------------
+
+# Nếu không có file cụ thể, chuyển hướng đến index.php
+DirectoryIndex index.php
+
+# Cho phép truy cập vào các thư mục (vd: /gioi-thieu/)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+)/$ $1/index.php [L]
+
+# Xử lý lỗi 404
+ErrorDocument 404 /404.html
